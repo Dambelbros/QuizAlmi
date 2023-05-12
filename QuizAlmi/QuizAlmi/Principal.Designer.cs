@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.panelIniciar = new System.Windows.Forms.Panel();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.btnJugar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.btnJugar = new System.Windows.Forms.Button();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.panelTemas = new System.Windows.Forms.Panel();
+            this.btnTemaCultura = new System.Windows.Forms.Button();
             this.btnTemaInformatica = new System.Windows.Forms.Button();
-            this.btnTemaInformaticaIngles = new System.Windows.Forms.Button();
             this.panelIniciar.SuspendLayout();
             this.panelTemas.SuspendLayout();
             this.SuspendLayout();
@@ -49,12 +49,14 @@
             this.panelIniciar.Size = new System.Drawing.Size(776, 532);
             this.panelIniciar.TabIndex = 0;
             // 
-            // txtNombre
+            // btnSalir
             // 
-            this.txtNombre.Location = new System.Drawing.Point(299, 195);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(183, 20);
-            this.txtNombre.TabIndex = 0;
+            this.btnSalir.Location = new System.Drawing.Point(350, 261);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.TabIndex = 2;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
             // 
             // btnJugar
             // 
@@ -66,24 +68,32 @@
             this.btnJugar.UseVisualStyleBackColor = true;
             this.btnJugar.Click += new System.EventHandler(this.btnJugar_Click);
             // 
-            // btnSalir
+            // txtNombre
             // 
-            this.btnSalir.Location = new System.Drawing.Point(350, 261);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
-            this.btnSalir.TabIndex = 2;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
+            this.txtNombre.Location = new System.Drawing.Point(299, 195);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(183, 20);
+            this.txtNombre.TabIndex = 0;
             // 
             // panelTemas
             // 
-            this.panelTemas.Controls.Add(this.btnTemaInformaticaIngles);
+            this.panelTemas.Controls.Add(this.btnTemaCultura);
             this.panelTemas.Controls.Add(this.btnTemaInformatica);
             this.panelTemas.Location = new System.Drawing.Point(15, 28);
             this.panelTemas.Name = "panelTemas";
             this.panelTemas.Size = new System.Drawing.Size(773, 479);
             this.panelTemas.TabIndex = 1;
             this.panelTemas.Visible = false;
+            // 
+            // btnTemaCultura
+            // 
+            this.btnTemaCultura.Location = new System.Drawing.Point(307, 248);
+            this.btnTemaCultura.Name = "btnTemaCultura";
+            this.btnTemaCultura.Size = new System.Drawing.Size(150, 23);
+            this.btnTemaCultura.TabIndex = 0;
+            this.btnTemaCultura.Text = "Cultura General";
+            this.btnTemaCultura.UseVisualStyleBackColor = true;
+            this.btnTemaCultura.Click += new System.EventHandler(this.btnTemaCultura_Click);
             // 
             // btnTemaInformatica
             // 
@@ -94,15 +104,6 @@
             this.btnTemaInformatica.Text = "Informatica";
             this.btnTemaInformatica.UseVisualStyleBackColor = true;
             this.btnTemaInformatica.Click += new System.EventHandler(this.btnTemaInformatica_Click);
-            // 
-            // btnTemaInformaticaIngles
-            // 
-            this.btnTemaInformaticaIngles.Location = new System.Drawing.Point(307, 248);
-            this.btnTemaInformaticaIngles.Name = "btnTemaInformaticaIngles";
-            this.btnTemaInformaticaIngles.Size = new System.Drawing.Size(150, 23);
-            this.btnTemaInformaticaIngles.TabIndex = 0;
-            this.btnTemaInformaticaIngles.Text = "Informatica Ingles";
-            this.btnTemaInformaticaIngles.UseVisualStyleBackColor = true;
             // 
             // Principal
             // 
@@ -127,7 +128,7 @@
         private System.Windows.Forms.Button btnJugar;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Panel panelTemas;
-        private System.Windows.Forms.Button btnTemaInformaticaIngles;
+        private System.Windows.Forms.Button btnTemaCultura;
         private System.Windows.Forms.Button btnTemaInformatica;
     }
 }

@@ -49,7 +49,17 @@ namespace QuizAlmi
 
         private void btnTemaInformatica_Click(object sender, EventArgs e)
         {
-            String url = "http://192.168.0.161:8080/api/preguntas";
+            pasarAlJuego("informatica");
+        }
+
+        private void btnTemaCultura_Click(object sender, EventArgs e)
+        {
+            pasarAlJuego("cultura");
+        }
+
+        private void pasarAlJuego(String tema)
+        {
+            String url = "http://192.168.0.120:8080/api/juego/preguntas/" + tema;
 
             HttpWebRequest pet = WebRequest.Create(url) as HttpWebRequest;
             pet.Method = "GET";

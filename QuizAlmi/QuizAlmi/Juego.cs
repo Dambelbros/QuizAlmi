@@ -16,10 +16,13 @@ namespace QuizAlmi
         private int puntos = 0, nivel = 0, estado = -1, segundos;
         private Timer cambioImagen = new Timer();
         private Boolean acertado;
+        private Principal principal;
         public Juego(Newtonsoft.Json.Linq.JObject preguntas, Principal principal)
         {
             InitializeComponent();
+
             this.preguntas = preguntas;
+            this.principal = principal;
 
             lblPuntos.Text = puntos.ToString();
             lblNivel.Text = "Pregunta: " + (nivel + 1).ToString();
@@ -40,6 +43,8 @@ namespace QuizAlmi
 
             if (estado == 0)
             {
+                lblNivel.Text = "Pregunta: " + (nivel + 1).ToString();
+                panelAclaracion.Visible = false;
                 pbImagen.Visible = true;
                 pbImagen.ImageLocation = preguntas["data"][nivel]["foto"].ToString();
                 cambioImagen.Start();
@@ -59,6 +64,7 @@ namespace QuizAlmi
                 btnResp4.Text = preguntas["data"][nivel]["respuestas"][3]["frase"].ToString();
             } else if (estado == 2)
             {
+                Console.WriteLine("Entra");
                 panelPregunta.Visible = false;
                 panelAclaracion.Visible = true;
                 if (acertado)
@@ -79,12 +85,23 @@ namespace QuizAlmi
                 {
                     lblResultado.Text = "Has Fallado";
                 }
-                //lblAclaracion.Text = preguntas["data"][nivel]["aclaracion"].ToString();
+                lblAclaracion.Text = preguntas["data"][nivel]["aclaracion"].ToString();
+                lblPuntos.Text = puntos.ToString();
             } else if(estado == 3)
             {
                 nivel++;
-                estado = -1;
-                siguienteEstado();
+                if (nivel >= preguntas["data"].Count())
+                {
+                    Console.WriteLine("Ultimo nivel");
+                    siguienteEstado();
+                } else
+                {
+                    estado = -1;
+                    siguienteEstado();
+                }
+            } else if (estado == 4)
+            {
+                panelFinal.Visible = true;
             }
         }
 
@@ -110,8 +127,12 @@ namespace QuizAlmi
 
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
-            estado = 3;
             siguienteEstado();
+        }
+
+        private void Juego_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            principal.Dispose();
         }
 
         private void contraReloj_Tick(object sender, EventArgs e)
