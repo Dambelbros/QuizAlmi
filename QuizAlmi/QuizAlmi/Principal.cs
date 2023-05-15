@@ -16,32 +16,17 @@ namespace QuizAlmi
     {
         public String nombre;
         private Juego juegoVentana;
+        private Newtonsoft.Json.Linq.JObject objeto;
         public Principal()
         {
             InitializeComponent();
-            /*
-            String url = "http://192.168.0.161:8080/api/preguntas/" + "informatica";
-
-            HttpWebRequest pet = WebRequest.Create(url) as HttpWebRequest;
-            pet.Method = "GET";
-
-            HttpWebResponse res = pet.GetResponse() as HttpWebResponse;
-            Newtonsoft.Json.Linq.JObject objeto;
-
-            using (StreamReader reader = new StreamReader(res.GetResponseStream()))
-            {
-                string json = reader.ReadToEnd();
-                objeto = (Newtonsoft.Json.Linq.JObject)Newtonsoft.Json.JsonConvert.DeserializeObject(json);
-                Console.WriteLine(objeto);
-            }
-            */
         }
 
         private void btnJugar_Click(object sender, EventArgs e)
         {
-            if (txtNombre.Text.Length > 0)
+            if (txtRedonNombre.textBox1.Text.Length > 0)
             {
-                nombre = txtNombre.Text;
+                nombre = txtRedonNombre.textBox1.Text;
                 panelIniciar.Visible = false;
                 panelTemas.Visible = true;
             }
@@ -65,7 +50,6 @@ namespace QuizAlmi
             pet.Method = "GET";
 
             HttpWebResponse res = pet.GetResponse() as HttpWebResponse;
-            Newtonsoft.Json.Linq.JObject objeto;
 
             using (StreamReader reader = new StreamReader(res.GetResponseStream()))
             {

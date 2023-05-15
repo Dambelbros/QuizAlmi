@@ -24,12 +24,12 @@ namespace QuizAlmi
             this.preguntas = preguntas;
             this.principal = principal;
 
-            lblPuntos.Text = puntos.ToString();
+            lblPuntos.Text = puntos.ToString() + " puntos";
             lblNivel.Text = "Pregunta: " + (nivel + 1).ToString();
             lblNombre.Text = principal.nombre.ToString();
 
             /*Configuracion Timer*/
-            cambioImagen.Interval = 500;
+            cambioImagen.Interval = 2000;
             cambioImagen.Tick += new EventHandler(tickTimerCambioImagen);
 
             contraReloj.Interval = 1000;
@@ -46,7 +46,7 @@ namespace QuizAlmi
                 lblNivel.Text = "Pregunta: " + (nivel + 1).ToString();
                 panelAclaracion.Visible = false;
                 pbImagen.Visible = true;
-                pbImagen.ImageLocation = preguntas["data"][nivel]["foto"].ToString();
+                pbImagen.ImageLocation = "http://192.168.0.120" + preguntas["data"][nivel]["foto"].ToString();
                 cambioImagen.Start();
             }
             else if (estado == 1)
@@ -58,13 +58,12 @@ namespace QuizAlmi
                 pbImagen.Visible = false;
                 panelPregunta.Visible = true;
                 lblPregunta.Text = preguntas["data"][nivel]["titulo"].ToString();
-                btnResp1.Text = preguntas["data"][nivel]["respuestas"][0]["frase"].ToString();
-                btnResp2.Text = preguntas["data"][nivel]["respuestas"][1]["frase"].ToString();
-                btnResp3.Text = preguntas["data"][nivel]["respuestas"][2]["frase"].ToString();
-                btnResp4.Text = preguntas["data"][nivel]["respuestas"][3]["frase"].ToString();
+                botnResp1.Text = preguntas["data"][nivel]["respuestas"][0]["frase"].ToString();
+                botnResp2.Text = preguntas["data"][nivel]["respuestas"][1]["frase"].ToString();
+                botnResp3.Text = preguntas["data"][nivel]["respuestas"][2]["frase"].ToString();
+                botnResp4.Text = preguntas["data"][nivel]["respuestas"][3]["frase"].ToString();
             } else if (estado == 2)
             {
-                Console.WriteLine("Entra");
                 panelPregunta.Visible = false;
                 panelAclaracion.Visible = true;
                 if (acertado)
@@ -80,13 +79,15 @@ namespace QuizAlmi
                         puntos += 300 + segundos*3;
                    }
                     lblResultado.Text = "Has Acertado";
+                    pbResultado.BackgroundImage = global::QuizAlmi.Properties.Resources.acierto;
                 }
                 else
                 {
                     lblResultado.Text = "Has Fallado";
+                    pbResultado.BackgroundImage = global::QuizAlmi.Properties.Resources.fallo;
                 }
                 lblAclaracion.Text = preguntas["data"][nivel]["aclaracion"].ToString();
-                lblPuntos.Text = puntos.ToString();
+                lblPuntos.Text = puntos.ToString() + " puntos";
             } else if(estado == 3)
             {
                 nivel++;
@@ -133,6 +134,11 @@ namespace QuizAlmi
         private void Juego_FormClosed(object sender, FormClosedEventArgs e)
         {
             principal.Dispose();
+        }
+
+        private void pbImagen_LoadCompleted(object sender, AsyncCompletedEventArgs e)
+        {
+            Console.WriteLine("Cargado");
         }
 
         private void contraReloj_Tick(object sender, EventArgs e)
