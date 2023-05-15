@@ -35,6 +35,7 @@ namespace QuizAlmi
             contraReloj.Interval = 1000;
 
             siguienteEstado();
+            Console.WriteLine("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
         }
 
         private void siguienteEstado()
@@ -47,6 +48,7 @@ namespace QuizAlmi
                 panelAclaracion.Visible = false;
                 pbImagen.Visible = true;
                 pbImagen.ImageLocation = "http://192.168.0.120" + preguntas["data"][nivel]["foto"].ToString();
+                pbImagen.LoadAsync();
                 cambioImagen.Start();
             }
             else if (estado == 1)
@@ -138,7 +140,11 @@ namespace QuizAlmi
 
         private void pbImagen_LoadCompleted(object sender, AsyncCompletedEventArgs e)
         {
-            Console.WriteLine("Cargado");
+            Console.WriteLine("Entra");
+            if (nivel == 0)
+            {
+                principal.cambioVentanas();
+            }
         }
 
         private void contraReloj_Tick(object sender, EventArgs e)

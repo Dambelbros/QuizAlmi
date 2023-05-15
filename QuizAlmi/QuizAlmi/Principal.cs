@@ -56,9 +56,13 @@ namespace QuizAlmi
                 string json = reader.ReadToEnd();
                 objeto = (Newtonsoft.Json.Linq.JObject)Newtonsoft.Json.JsonConvert.DeserializeObject(json);
                 juegoVentana = new Juego(objeto, this);
-                this.Hide();
-                juegoVentana.Show();
             }
+        }
+
+        public void cambioVentanas()
+        {
+            this.Hide();
+            juegoVentana.Show();
         }
     }
 }
