@@ -29,32 +29,38 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblNivel = new System.Windows.Forms.Label();
             this.lblPuntos = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblSegundos = new System.Windows.Forms.Label();
             this.panelPregunta = new System.Windows.Forms.Panel();
-            this.botnResp4 = new QuizAlmi.Botn();
-            this.botnResp3 = new QuizAlmi.Botn();
-            this.botnResp2 = new QuizAlmi.Botn();
-            this.botnResp1 = new QuizAlmi.Botn();
             this.lblPregunta = new System.Windows.Forms.Label();
             this.panelAclaracion = new System.Windows.Forms.Panel();
             this.pbResultado = new System.Windows.Forms.PictureBox();
-            this.botnSiguiente = new QuizAlmi.Botn();
             this.lblAclaracion = new System.Windows.Forms.Label();
             this.lblResultado = new System.Windows.Forms.Label();
             this.contraReloj = new System.Windows.Forms.Timer(this.components);
             this.panelFinal = new System.Windows.Forms.Panel();
+            this.lblFinalPuntos = new System.Windows.Forms.Label();
             this.lblFinal = new System.Windows.Forms.Label();
             this.pbImagen = new System.Windows.Forms.PictureBox();
+            this.dvgResultados = new System.Windows.Forms.DataGridView();
+            this.pregunta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.resultado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.botnSiguiente = new QuizAlmi.Botn();
+            this.botnResp4 = new QuizAlmi.Botn();
+            this.botnResp3 = new QuizAlmi.Botn();
+            this.botnResp2 = new QuizAlmi.Botn();
+            this.botnResp1 = new QuizAlmi.Botn();
             this.panel1.SuspendLayout();
             this.panelPregunta.SuspendLayout();
             this.panelAclaracion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbResultado)).BeginInit();
             this.panelFinal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgResultados)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -126,6 +132,169 @@
             this.panelPregunta.Size = new System.Drawing.Size(870, 677);
             this.panelPregunta.TabIndex = 2;
             this.panelPregunta.Visible = false;
+            // 
+            // lblPregunta
+            // 
+            this.lblPregunta.Font = new System.Drawing.Font("Cascadia Mono", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPregunta.ForeColor = System.Drawing.Color.White;
+            this.lblPregunta.Location = new System.Drawing.Point(3, 66);
+            this.lblPregunta.Name = "lblPregunta";
+            this.lblPregunta.Size = new System.Drawing.Size(867, 107);
+            this.lblPregunta.TabIndex = 0;
+            this.lblPregunta.Text = "¿?";
+            this.lblPregunta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panelAclaracion
+            // 
+            this.panelAclaracion.Controls.Add(this.pbResultado);
+            this.panelAclaracion.Controls.Add(this.botnSiguiente);
+            this.panelAclaracion.Controls.Add(this.lblAclaracion);
+            this.panelAclaracion.Controls.Add(this.lblResultado);
+            this.panelAclaracion.Location = new System.Drawing.Point(12, 52);
+            this.panelAclaracion.Name = "panelAclaracion";
+            this.panelAclaracion.Size = new System.Drawing.Size(870, 677);
+            this.panelAclaracion.TabIndex = 7;
+            this.panelAclaracion.Visible = false;
+            // 
+            // pbResultado
+            // 
+            this.pbResultado.BackgroundImage = global::QuizAlmi.Properties.Resources.acierto;
+            this.pbResultado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbResultado.Location = new System.Drawing.Point(368, 75);
+            this.pbResultado.Name = "pbResultado";
+            this.pbResultado.Size = new System.Drawing.Size(70, 70);
+            this.pbResultado.TabIndex = 0;
+            this.pbResultado.TabStop = false;
+            // 
+            // lblAclaracion
+            // 
+            this.lblAclaracion.Font = new System.Drawing.Font("Cascadia Mono", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAclaracion.ForeColor = System.Drawing.Color.White;
+            this.lblAclaracion.Location = new System.Drawing.Point(152, 224);
+            this.lblAclaracion.Name = "lblAclaracion";
+            this.lblAclaracion.Size = new System.Drawing.Size(303, 290);
+            this.lblAclaracion.TabIndex = 1;
+            this.lblAclaracion.Text = "Aclaracion";
+            // 
+            // lblResultado
+            // 
+            this.lblResultado.AutoSize = true;
+            this.lblResultado.Font = new System.Drawing.Font("Cascadia Mono", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResultado.ForeColor = System.Drawing.Color.White;
+            this.lblResultado.Location = new System.Drawing.Point(444, 98);
+            this.lblResultado.Name = "lblResultado";
+            this.lblResultado.Size = new System.Drawing.Size(120, 28);
+            this.lblResultado.TabIndex = 0;
+            this.lblResultado.Text = "Resultado";
+            // 
+            // contraReloj
+            // 
+            this.contraReloj.Tick += new System.EventHandler(this.contraReloj_Tick);
+            // 
+            // panelFinal
+            // 
+            this.panelFinal.Controls.Add(this.dvgResultados);
+            this.panelFinal.Controls.Add(this.lblFinalPuntos);
+            this.panelFinal.Controls.Add(this.lblFinal);
+            this.panelFinal.Location = new System.Drawing.Point(12, 52);
+            this.panelFinal.Name = "panelFinal";
+            this.panelFinal.Size = new System.Drawing.Size(870, 677);
+            this.panelFinal.TabIndex = 3;
+            this.panelFinal.Visible = false;
+            // 
+            // lblFinalPuntos
+            // 
+            this.lblFinalPuntos.AutoSize = true;
+            this.lblFinalPuntos.Font = new System.Drawing.Font("Cascadia Mono", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFinalPuntos.ForeColor = System.Drawing.Color.White;
+            this.lblFinalPuntos.Location = new System.Drawing.Point(260, 148);
+            this.lblFinalPuntos.Name = "lblFinalPuntos";
+            this.lblFinalPuntos.Size = new System.Drawing.Size(144, 25);
+            this.lblFinalPuntos.TabIndex = 1;
+            this.lblFinalPuntos.Text = "Puntos: 1423";
+            // 
+            // lblFinal
+            // 
+            this.lblFinal.AutoSize = true;
+            this.lblFinal.Font = new System.Drawing.Font("Cascadia Mono", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFinal.ForeColor = System.Drawing.Color.White;
+            this.lblFinal.Location = new System.Drawing.Point(256, 96);
+            this.lblFinal.Name = "lblFinal";
+            this.lblFinal.Size = new System.Drawing.Size(308, 49);
+            this.lblFinal.TabIndex = 0;
+            this.lblFinal.Text = "Juego Acabado";
+            // 
+            // pbImagen
+            // 
+            this.pbImagen.Location = new System.Drawing.Point(155, 168);
+            this.pbImagen.Name = "pbImagen";
+            this.pbImagen.Size = new System.Drawing.Size(344, 231);
+            this.pbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbImagen.TabIndex = 1;
+            this.pbImagen.TabStop = false;
+            this.pbImagen.LoadCompleted += new System.ComponentModel.AsyncCompletedEventHandler(this.pbImagen_LoadCompleted);
+            // 
+            // dvgResultados
+            // 
+            this.dvgResultados.AllowUserToAddRows = false;
+            this.dvgResultados.AllowUserToDeleteRows = false;
+            this.dvgResultados.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(16)))), ((int)(((byte)(22)))));
+            this.dvgResultados.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dvgResultados.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dvgResultados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvgResultados.ColumnHeadersVisible = false;
+            this.dvgResultados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.pregunta,
+            this.resultado});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(16)))), ((int)(((byte)(22)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Cascadia Mono", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dvgResultados.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dvgResultados.Location = new System.Drawing.Point(94, 204);
+            this.dvgResultados.Name = "dvgResultados";
+            this.dvgResultados.ReadOnly = true;
+            this.dvgResultados.Size = new System.Drawing.Size(683, 332);
+            this.dvgResultados.TabIndex = 2;
+            // 
+            // pregunta
+            // 
+            this.pregunta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.pregunta.Frozen = true;
+            this.pregunta.HeaderText = "Pregunta";
+            this.pregunta.Name = "pregunta";
+            this.pregunta.ReadOnly = true;
+            this.pregunta.Width = 5;
+            // 
+            // resultado
+            // 
+            this.resultado.Frozen = true;
+            this.resultado.HeaderText = "Resultado";
+            this.resultado.Name = "resultado";
+            this.resultado.ReadOnly = true;
+            // 
+            // botnSiguiente
+            // 
+            this.botnSiguiente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
+            this.botnSiguiente.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
+            this.botnSiguiente.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.botnSiguiente.BorderRadius = 40;
+            this.botnSiguiente.BorderSize = 0;
+            this.botnSiguiente.FlatAppearance.BorderSize = 0;
+            this.botnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botnSiguiente.Font = new System.Drawing.Font("Cascadia Mono", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botnSiguiente.ForeColor = System.Drawing.Color.White;
+            this.botnSiguiente.Location = new System.Drawing.Point(478, 214);
+            this.botnSiguiente.Name = "botnSiguiente";
+            this.botnSiguiente.Size = new System.Drawing.Size(300, 300);
+            this.botnSiguiente.TabIndex = 3;
+            this.botnSiguiente.Text = ">";
+            this.botnSiguiente.TextColor = System.Drawing.Color.White;
+            this.botnSiguiente.UseVisualStyleBackColor = false;
+            this.botnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
             // 
             // botnResp4
             // 
@@ -203,112 +372,6 @@
             this.botnResp1.UseVisualStyleBackColor = false;
             this.botnResp1.Click += new System.EventHandler(this.btnResp1_Click);
             // 
-            // lblPregunta
-            // 
-            this.lblPregunta.Font = new System.Drawing.Font("Cascadia Mono", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPregunta.ForeColor = System.Drawing.Color.White;
-            this.lblPregunta.Location = new System.Drawing.Point(3, 66);
-            this.lblPregunta.Name = "lblPregunta";
-            this.lblPregunta.Size = new System.Drawing.Size(867, 107);
-            this.lblPregunta.TabIndex = 0;
-            this.lblPregunta.Text = "¿?";
-            this.lblPregunta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panelAclaracion
-            // 
-            this.panelAclaracion.Controls.Add(this.pbResultado);
-            this.panelAclaracion.Controls.Add(this.botnSiguiente);
-            this.panelAclaracion.Controls.Add(this.lblAclaracion);
-            this.panelAclaracion.Controls.Add(this.lblResultado);
-            this.panelAclaracion.Location = new System.Drawing.Point(12, 52);
-            this.panelAclaracion.Name = "panelAclaracion";
-            this.panelAclaracion.Size = new System.Drawing.Size(870, 677);
-            this.panelAclaracion.TabIndex = 7;
-            this.panelAclaracion.Visible = false;
-            // 
-            // pbResultado
-            // 
-            this.pbResultado.BackgroundImage = global::QuizAlmi.Properties.Resources.acierto;
-            this.pbResultado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbResultado.Location = new System.Drawing.Point(368, 75);
-            this.pbResultado.Name = "pbResultado";
-            this.pbResultado.Size = new System.Drawing.Size(70, 70);
-            this.pbResultado.TabIndex = 0;
-            this.pbResultado.TabStop = false;
-            // 
-            // botnSiguiente
-            // 
-            this.botnSiguiente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
-            this.botnSiguiente.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
-            this.botnSiguiente.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.botnSiguiente.BorderRadius = 40;
-            this.botnSiguiente.BorderSize = 0;
-            this.botnSiguiente.FlatAppearance.BorderSize = 0;
-            this.botnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botnSiguiente.Font = new System.Drawing.Font("Cascadia Mono", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botnSiguiente.ForeColor = System.Drawing.Color.White;
-            this.botnSiguiente.Location = new System.Drawing.Point(478, 214);
-            this.botnSiguiente.Name = "botnSiguiente";
-            this.botnSiguiente.Size = new System.Drawing.Size(300, 300);
-            this.botnSiguiente.TabIndex = 3;
-            this.botnSiguiente.Text = ">";
-            this.botnSiguiente.TextColor = System.Drawing.Color.White;
-            this.botnSiguiente.UseVisualStyleBackColor = false;
-            this.botnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
-            // 
-            // lblAclaracion
-            // 
-            this.lblAclaracion.Font = new System.Drawing.Font("Cascadia Mono", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAclaracion.ForeColor = System.Drawing.Color.White;
-            this.lblAclaracion.Location = new System.Drawing.Point(152, 224);
-            this.lblAclaracion.Name = "lblAclaracion";
-            this.lblAclaracion.Size = new System.Drawing.Size(303, 290);
-            this.lblAclaracion.TabIndex = 1;
-            this.lblAclaracion.Text = "Aclaracion";
-            // 
-            // lblResultado
-            // 
-            this.lblResultado.AutoSize = true;
-            this.lblResultado.Font = new System.Drawing.Font("Cascadia Mono", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResultado.ForeColor = System.Drawing.Color.White;
-            this.lblResultado.Location = new System.Drawing.Point(444, 98);
-            this.lblResultado.Name = "lblResultado";
-            this.lblResultado.Size = new System.Drawing.Size(120, 28);
-            this.lblResultado.TabIndex = 0;
-            this.lblResultado.Text = "Resultado";
-            // 
-            // contraReloj
-            // 
-            this.contraReloj.Tick += new System.EventHandler(this.contraReloj_Tick);
-            // 
-            // panelFinal
-            // 
-            this.panelFinal.Controls.Add(this.lblFinal);
-            this.panelFinal.Location = new System.Drawing.Point(50, 80);
-            this.panelFinal.Name = "panelFinal";
-            this.panelFinal.Size = new System.Drawing.Size(833, 401);
-            this.panelFinal.TabIndex = 3;
-            this.panelFinal.Visible = false;
-            // 
-            // lblFinal
-            // 
-            this.lblFinal.AutoSize = true;
-            this.lblFinal.Location = new System.Drawing.Point(137, 104);
-            this.lblFinal.Name = "lblFinal";
-            this.lblFinal.Size = new System.Drawing.Size(82, 13);
-            this.lblFinal.TabIndex = 0;
-            this.lblFinal.Text = "Juego Acabado";
-            // 
-            // pbImagen
-            // 
-            this.pbImagen.Location = new System.Drawing.Point(155, 168);
-            this.pbImagen.Name = "pbImagen";
-            this.pbImagen.Size = new System.Drawing.Size(344, 231);
-            this.pbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbImagen.TabIndex = 1;
-            this.pbImagen.TabStop = false;
-            this.pbImagen.LoadCompleted += new System.ComponentModel.AsyncCompletedEventHandler(this.pbImagen_LoadCompleted);
-            // 
             // Juego
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -316,10 +379,10 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(16)))), ((int)(((byte)(22)))));
             this.ClientSize = new System.Drawing.Size(1132, 741);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelFinal);
             this.Controls.Add(this.pbImagen);
             this.Controls.Add(this.panelAclaracion);
             this.Controls.Add(this.panelPregunta);
-            this.Controls.Add(this.panelFinal);
             this.Name = "Juego";
             this.Text = "Juego";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Juego_FormClosed);
@@ -333,6 +396,7 @@
             this.panelFinal.ResumeLayout(false);
             this.panelFinal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgResultados)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -359,5 +423,9 @@
         private Botn botnResp1;
         private Botn botnSiguiente;
         private System.Windows.Forms.PictureBox pbResultado;
+        private System.Windows.Forms.Label lblFinalPuntos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pregunta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn resultado;
+        private System.Windows.Forms.DataGridView dvgResultados;
     }
 }
