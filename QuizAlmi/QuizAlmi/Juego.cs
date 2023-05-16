@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -120,13 +122,47 @@ namespace QuizAlmi
 
             } else if(estado == 3)
             {
+                lblFinalPuntos.Text += puntos.ToString();
+
+                string json = "{\"nombre\": \"" + lblNombre.Text + "\",\"data\": [";
+
                 for (int i = 0; i < preguntas["data"].Count(); i++)
                 {
+                    string temp = resultados[i, 2] == "Acertado" ? "true" : "false";
+                    if (i == preguntas["data"].Count() - 1)
+                    {
+                        json += "[\"" + resultados[i, 0] + "\", " + temp + "]";
+                    }
+                    else
+                    {
+                        json += "[\"" + resultados[i, 0] + "\"," + temp +"],";
+                    }
                     dvgResultados.Rows.Add(resultados[i, 1], resultados[i, 2]);
-
                 }
+                json += "]}";
+
+                Console.WriteLine(json);
 
                 panelFinal.Visible = true;
+
+                String url = "http://192.168.0.120:8080/api/partida";
+
+                
+                HttpWebRequest pet = WebRequest.Create(url) as HttpWebRequest;
+                pet.ContentType = "application/json";
+                pet.Method = "POST";
+
+                using (var streamWriter = new StreamWriter(pet.GetRequestStream()))
+                {
+                    streamWriter.Write(json);
+                }
+
+                var httpResponse = (HttpWebResponse)pet.GetResponse();
+                using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                {
+                    var result = streamReader.ReadToEnd();
+                }
+                
             }
         }
 
