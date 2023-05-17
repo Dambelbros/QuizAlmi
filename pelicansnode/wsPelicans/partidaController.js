@@ -1,10 +1,28 @@
 Partida = require('./partidaModel')
+let mongoose = require('mongoose');
 
-exports.test = function(req, res){
-    console.log(req.body)
+exports.anadirPartida = function(req, res){
+    tempPreguntas = [] 
 
-    res.json({
-        ok: "Ok"
+    tempPartida = new Partida()
+    tempPartida.jugador = req.body.nombre
+    tempPartida.puntos = req.body.puntos
+    req.body.data.forEach(function(pregunta){
+        tempPregunta = {
+            _id : mongoose.Types.ObjectId(pregunta[0]),
+            acertado : pregunta[1]
+        }
+
+        tempPreguntas.push(tempPregunta)
+    });
+
+    tempPartida.preguntas = tempPreguntas
+
+    tempPartida.save().then(function(response){
+        res.json({
+            ok: "Ok",
+            data: response
+        })
     })
 }
 
@@ -24,43 +42,6 @@ exports.leerPartida = function(req, res){
             data: response
         })
     })
-}
-
-exports.anadirPartida = function(req, res){
-    tempPartida = new Partida();
-    errores = Array()
-    if(req.body.jugador == ""){
-        errores.append('El jugador no pude estar vacio');
-    }
-    contador = 0;
-    req.body.respuestas.forEach(function(respuesta){
-        contador++;
-    });
-
-    if (req.body.preguntas == "" || contador != 15) {
-        errores.append('Las preguntas no son correctas');
-    }
-    
-    if (req.body.puntos == "") {
-        errores.append('Los puntos no pude estar vacio');
-    }
-
-    if (errores.length >= 1) {
-        res.json({
-            status: 'Fail',
-            data: errores
-        } )
-    } else {
-        tempPartida.jugador = req.body.jugador
-        tempPartida.preguntas = req.body.preguntas
-        tempPartida.puntos = req.body.puntos
-        tempPartida.save().then(function(response){
-            res.json({
-                status: 'Ok',
-                data: response
-            })
-        })
-    }
 }
 
 exports.topJugadas = function(req, res){

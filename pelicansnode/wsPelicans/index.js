@@ -2,6 +2,7 @@
 let express = require('express');
 let bodyParser = require('body-parser');
 let mongoose = require('mongoose');
+let cors = require('cors');
 
 //Servidor
 let app = express();
@@ -13,6 +14,11 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 app.use(bodyParser.text({type: '*/*'}));
+
+//Cors
+app.use(cors({
+    origin: '*'
+}));
 
 //Conexion Base de Datos
 mongoose.connect('mongodb://localhost:27017/pelicans', {useNewUrlParser: true, useUnifiedTopology: true});

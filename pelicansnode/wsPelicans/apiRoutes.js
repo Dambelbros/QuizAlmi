@@ -7,8 +7,7 @@ router.route('/preguntas').get(preguntaController.todasPreguntas);
 
 router.route('/partida')
     .get(partidaController.todasPartidas)
-    .put(partidaController.anadirPartida)
-    .post(partidaController.test)
+    .post(partidaController.anadirPartida)
 
 router.route('/partida/topJugadas').get(partidaController.topJugadas)
 
@@ -18,6 +17,8 @@ router.route('/preguntas').get(preguntaController.todasPreguntas);
 router.route('/juego/preguntas/:tema').get(preguntaController.listadoPreguntas)
 
 router.route('/pregunta/:idPregunta').get(preguntaController.leerPregunta)
+
+router.route('/preguntas/autor/:usuario').get(preguntaController.preguntasAutor);
 
 router.route('/pregunta')
     .delete(preguntaController.eliminarPregunta)

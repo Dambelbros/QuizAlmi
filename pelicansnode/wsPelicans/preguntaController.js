@@ -9,6 +9,15 @@ exports.todasPreguntas = function(req, res){
     })
 }
 
+exports.preguntasAutor = function(req, res){
+    Pregunta.find({autor: req.params.usuario}).then(function(response){
+        res.json({
+            status: 'Ok',
+            data: response
+        })
+    })
+}
+
 exports.leerPregunta = function(req, res){
     Pregunta.findById(req.params.idPregunta).then(function(response){
         res.json({
@@ -114,6 +123,13 @@ exports.listadoPreguntas = function(req, res) {
         { $sample: { size: 5 }}
     ]).then(function(pregFacil){
         pregFacil.forEach(function(registro){
+            tempRespuestas = []
+            numAleatorios = generarNumerosAleatorios()
+            tempRespuestas[0] = registro.respuestas[numAleatorios[0]]
+            tempRespuestas[1] = registro.respuestas[numAleatorios[1]]
+            tempRespuestas[2] = registro.respuestas[numAleatorios[2]]
+            tempRespuestas[3] = registro.respuestas[numAleatorios[3]]
+            registro.respuestas = tempRespuestas
             listadoPreguntas.push(registro)
         });
 
@@ -122,6 +138,13 @@ exports.listadoPreguntas = function(req, res) {
             { $sample: { size: 5 }}
         ]).then(function(pregMedio){
             pregMedio.forEach(function(registro){
+                tempRespuestas = []
+                numAleatorios = generarNumerosAleatorios()
+                tempRespuestas[0] = registro.respuestas[numAleatorios[0]]
+                tempRespuestas[1] = registro.respuestas[numAleatorios[1]]
+                tempRespuestas[2] = registro.respuestas[numAleatorios[2]]
+                tempRespuestas[3] = registro.respuestas[numAleatorios[3]]
+                registro.respuestas = tempRespuestas
                 listadoPreguntas.push(registro)
             });
 
@@ -130,6 +153,13 @@ exports.listadoPreguntas = function(req, res) {
                 { $sample: { size: 5 }}
             ]).then(function(pregDificil){
                 pregDificil.forEach(function(registro){
+                    tempRespuestas = []
+                    numAleatorios = generarNumerosAleatorios()
+                    tempRespuestas[0] = registro.respuestas[numAleatorios[0]]
+                    tempRespuestas[1] = registro.respuestas[numAleatorios[1]]
+                    tempRespuestas[2] = registro.respuestas[numAleatorios[2]]
+                    tempRespuestas[3] = registro.respuestas[numAleatorios[3]]
+                    registro.respuestas = tempRespuestas
                     listadoPreguntas.push(registro)
                 }); 
 
@@ -141,6 +171,20 @@ exports.listadoPreguntas = function(req, res) {
         })
     })
 };
+
+function generarNumerosAleatorios() {
+    var numeros = [];
+  
+    while (numeros.length < 4) {
+      var numero = Math.floor(Math.random() * 4);
+  
+      if (!numeros.includes(numero)) {
+        numeros.push(numero);
+      }
+    }
+  
+    return numeros;
+  }
 
 /*
 exports.listadoPreguntas = function(req, res) {
