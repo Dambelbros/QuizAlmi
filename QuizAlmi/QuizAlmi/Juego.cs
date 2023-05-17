@@ -124,7 +124,7 @@ namespace QuizAlmi
             {
                 lblFinalPuntos.Text += puntos.ToString();
 
-                string json = "{\"nombre\": \"" + lblNombre.Text + "\",\"data\": [";
+                string json = "{\"nombre\": \"" + lblNombre.Text + "\", \"puntos\":\"" + puntos + "\",\"data\": [";
 
                 for (int i = 0; i < preguntas["data"].Count(); i++)
                 {
@@ -213,6 +213,12 @@ namespace QuizAlmi
             {
                 botnSiguiente.Enabled = true;
             }
+        }
+
+        private void botnCoTE_Click(object sender, EventArgs e)
+        {
+            segundos += 30;
+            botnCoTE.Enabled = false;
         }
 
         private void contraReloj_Tick(object sender, EventArgs e)

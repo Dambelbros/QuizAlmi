@@ -35,8 +35,8 @@ namespace QuizAlmi
             this.botnJugar = new QuizAlmi.Botn();
             this.btnSalir = new System.Windows.Forms.Button();
             this.panelTemas = new System.Windows.Forms.Panel();
-            this.botnTemaInfor = new QuizAlmi.Botn();
             this.botnTemaCultu = new QuizAlmi.Botn();
+            this.botnTemaInfor = new QuizAlmi.Botn();
             this.panelIniciar.SuspendLayout();
             this.panelTemas.SuspendLayout();
             this.SuspendLayout();
@@ -110,26 +110,6 @@ namespace QuizAlmi
             this.panelTemas.TabIndex = 1;
             this.panelTemas.Visible = false;
             // 
-            // botnTemaInfor
-            // 
-            this.botnTemaInfor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
-            this.botnTemaInfor.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
-            this.botnTemaInfor.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.botnTemaInfor.BorderRadius = 10;
-            this.botnTemaInfor.BorderSize = 0;
-            this.botnTemaInfor.FlatAppearance.BorderSize = 0;
-            this.botnTemaInfor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botnTemaInfor.Font = new System.Drawing.Font("Cascadia Mono", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botnTemaInfor.ForeColor = System.Drawing.Color.White;
-            this.botnTemaInfor.Location = new System.Drawing.Point(364, 354);
-            this.botnTemaInfor.Name = "botnTemaInfor";
-            this.botnTemaInfor.Size = new System.Drawing.Size(182, 30);
-            this.botnTemaInfor.TabIndex = 1;
-            this.botnTemaInfor.Text = "Informática";
-            this.botnTemaInfor.TextColor = System.Drawing.Color.White;
-            this.botnTemaInfor.UseVisualStyleBackColor = false;
-            this.botnTemaInfor.Click += new System.EventHandler(this.btnTemaInformatica_Click);
-            // 
             // botnTemaCultu
             // 
             this.botnTemaCultu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
@@ -150,14 +130,34 @@ namespace QuizAlmi
             this.botnTemaCultu.UseVisualStyleBackColor = false;
             this.botnTemaCultu.Click += new System.EventHandler(this.btnTemaCultura_Click);
             // 
+            // botnTemaInfor
+            // 
+            this.botnTemaInfor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
+            this.botnTemaInfor.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
+            this.botnTemaInfor.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.botnTemaInfor.BorderRadius = 10;
+            this.botnTemaInfor.BorderSize = 0;
+            this.botnTemaInfor.FlatAppearance.BorderSize = 0;
+            this.botnTemaInfor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botnTemaInfor.Font = new System.Drawing.Font("Cascadia Mono", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botnTemaInfor.ForeColor = System.Drawing.Color.White;
+            this.botnTemaInfor.Location = new System.Drawing.Point(364, 354);
+            this.botnTemaInfor.Name = "botnTemaInfor";
+            this.botnTemaInfor.Size = new System.Drawing.Size(182, 30);
+            this.botnTemaInfor.TabIndex = 1;
+            this.botnTemaInfor.Text = "Informática";
+            this.botnTemaInfor.TextColor = System.Drawing.Color.White;
+            this.botnTemaInfor.UseVisualStyleBackColor = false;
+            this.botnTemaInfor.Click += new System.EventHandler(this.btnTemaInformatica_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(16)))), ((int)(((byte)(22)))));
             this.ClientSize = new System.Drawing.Size(894, 741);
-            this.Controls.Add(this.panelTemas);
             this.Controls.Add(this.panelIniciar);
+            this.Controls.Add(this.panelTemas);
             this.Name = "Principal";
             this.Text = "Menu";
             this.panelIniciar.ResumeLayout(false);

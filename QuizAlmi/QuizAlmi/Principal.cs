@@ -21,29 +21,7 @@ namespace QuizAlmi
         {
             InitializeComponent();
 
-            /* PRUEBA */
-            /*
-            String url = "http://192.168.0.120:8080/api/partida";
-
-            HttpWebRequest pet = WebRequest.Create(url) as HttpWebRequest;
-            pet.ContentType = "application/json";
-            pet.Method = "POST";
-
-            using (var streamWriter = new StreamWriter(pet.GetRequestStream()))
-            {
-                string json = "{\"user\":\"test\"," +
-                              "\"password\":\"bla\"}";
-
-                streamWriter.Write(json);
-            }
-
-            var httpResponse = (HttpWebResponse)pet.GetResponse();
-            using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
-            {
-                var result = streamReader.ReadToEnd();
-            }
-            */
-
+            botnJugar.Focus();
         }
 
         private void btnJugar_Click(object sender, EventArgs e)
