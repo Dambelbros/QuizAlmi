@@ -1,0 +1,157 @@
+/*Index*/
+.background-primary-color {
+    background-color: #111b33;
+}
+
+.background-secundary-color {
+    background-color: #090e1b;
+}
+
+.white {
+    color: #fff !important;
+}
+
+#sidebar-nav {
+    width: 160px;
+}
+
+/*Alta pregunta*/
+#box-form {
+    border-radius: 80px;
+    z-index: 1;
+}
+
+#box-form input {
+    border: 2px solid black;
+    border-radius: 15px;
+}
+
+#box-form button {
+    width: 100%;
+    border: 2px solid black;
+    background-color: #111b33;
+    color: #fff;
+    border-radius: 15px;
+}
+
+#box-tops ul {
+    list-style: none;
+    padding: 0%;
+    column-count: 1;
+    text-transform: uppercase;
+}
+
+#box-tops ul li {
+    color: #fff;
+}
+
+/*Editar Pregunta*/
+#box-form-edit {
+    border-radius: 25px;
+    z-index: 1;
+}
+
+#box-form-edit input {
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+#box-form-edit button {
+    width: 100%;
+    border: 2px solid black;
+    background-color: #111b33;
+    color: #fff;
+    border-radius: 10px;
+}
+
+/*Revision Formulario - Iconos de los box*/
+.box-icons-revision a i {
+    font-size: 1.5em;
+}
+
+
+/*Editar Perfil*/
+#box-form-perfil {
+    border-radius: 25px;
+    z-index: 1;
+}
+
+#box-form-perfil button {
+    width: 30%;
+    border: 2px solid black;
+    background-color: #111b33;
+    color: #fff;
+    border-radius: 8px;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/*Imagenes Index*/
+
+.element-image {
+    width: 100%;
+    height: 100px;
+    border-radius: 35px;
+}
+#image1 {
+    animation-name: rotate_image, scale_image;
+    animation-duration: 8s, 2s;
+    animation-iteration-count: infinite, infinite;
+    animation-timing-function: linear, linear;
+}
+#image2 {
+    animation-name: rotate_image, scale_image;
+    animation-duration: 18s, 4s;
+    animation-iteration-count: infinite, infinite;
+    animation-timing-function: linear, linear;
+}
+#image3 {
+    animation-name: rotate_image, scale_image;
+    animation-duration: 18s, 4s;
+    animation-iteration-count: infinite, infinite;
+    animation-timing-function: linear, linear;
+}
+#image4 {
+    animation-name: rotate_image, scale_image;
+    animation-duration: 8s, 2s;
+    animation-iteration-count: infinite, infinite;
+    animation-timing-function: linear, linear;
+}
+
+@keyframes rotate_image {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
+@keyframes scale_image {
+    0% {scale: 1.0;}
+    50% {scale: 1.1;}
+    100% {scale: 1.0;}
+}
+
+/*Menu*/
+.nav-item a i {
+    margin-right: 8px;
+    font-size: 1.1em;
+}
+
+.navbar-light .navbar-toggler {
+    color: rgb(255 255 255);
+    border-color: #ffff;
+}
+
+/*Footer*/
+.list-unstyled li i {
+    color: white;
+    font-size: 1.5em;
+    transition: all 0.3s ease;
+  }
+  
+.list-unstyled li i:hover {
+    opacity: 0.5;
+}
+  
+  

@@ -1,0 +1,12 @@
+{
+    "name": "root/www/html",
+    "authors": [
+        {
+            "name": "Dambelbros",
+            "email": "dambelbrossl@gmail.com"
+        }
+    ],
+    "require": {
+        "mongodb/mongodb": "^1.15"
+    }
+}
