@@ -66,5 +66,12 @@ namespace QuizAlmi
             this.Hide();
             juegoVentana.Show();
         }
+
+        public void cambioPanel()
+        {
+            panelIniciar.Visible = true;
+            panelTemas.Visible = false;
+            txtRedonNombre.textBox1.Text = "";
+        }
     }
 }

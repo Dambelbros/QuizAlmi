@@ -20,7 +20,8 @@ namespace QuizAlmi
         private Timer cambioImagen = new Timer();
         private Boolean acertado;
         private Principal principal;
-        //private ArrayList resultados = new ArrayList();
+        private static Random random = new Random();
+        private List<Botn> botns = new List<Botn>();
         private String[,] resultados;
 
         public Juego(Newtonsoft.Json.Linq.JObject preguntas, Principal principal)
@@ -37,8 +38,13 @@ namespace QuizAlmi
             lblNombre.Text = principal.nombre.ToString();
             resultados = new string[preguntas["data"].Count(), 3];
 
+            botns.Add(botnResp1);
+            botns.Add(botnResp2);
+            botns.Add(botnResp3);
+            botns.Add(botnResp4);
+
             /*Configuracion Timer*/
-            cambioImagen.Interval = 500;
+            cambioImagen.Interval = 4000;
             cambioImagen.Tick += new EventHandler(tickTimerCambioImagen);
 
             contraReloj.Interval = 1000;
@@ -62,6 +68,15 @@ namespace QuizAlmi
             }
             else if (estado == 1)
             {
+                /*
+                Poner todos en blanco
+                */
+                foreach (var bt in botns)
+                {
+                    bt.Enabled = true;
+                    bt.ForeColor = System.Drawing.Color.White;
+                }
+
                 segundos = 30;
                 lblSegundos.Text = segundos.ToString();
                 lblSegundos.Visible = true;
@@ -143,6 +158,7 @@ namespace QuizAlmi
 
                 Console.WriteLine(json);
 
+                panelAclaracion.Visible = false;
                 panelFinal.Visible = true;
 
                 String url = "http://192.168.0.120:8080/api/partida";
@@ -221,6 +237,52 @@ namespace QuizAlmi
             botnCoTE.Enabled = false;
         }
 
+        private void botnCo50_Click(object sender, EventArgs e)
+        {
+            int[] numeros = new int[2];
+            bool[] seleccionados = new bool[4];
+
+            for (int i = 0; i < 2; i++)
+            {
+                int numero = random.Next(0, 4);
+                while (seleccionados[numero] || preguntas["data"][nivel]["respuestas"][numero]["correcta"].ToString() == "True")
+                {
+                    numero = random.Next(0, 4);
+                }
+
+                numeros[i] = numero;
+                seleccionados[numero] = true;
+            }
+
+            Console.WriteLine(numeros);
+
+            botns[numeros[0]].Enabled = false;
+            botns[numeros[1]].Enabled = false;
+
+            botnCo50.Enabled = false;
+        }
+
+        private void botnCoSP_Click(object sender, EventArgs e)
+        {
+            acertado = true;
+            contraReloj.Stop();
+            botnCoSP.Enabled = false;
+            siguienteEstado();
+        }
+
+        private void timerRespuesta_Tick(object sender, EventArgs e)
+        {
+            siguienteEstado();
+            timerRespuesta.Stop();
+        }
+
+        private void botnVolver_Click(object sender, EventArgs e)
+        {
+            principal.cambioPanel();
+            principal.Visible = true;
+            this.Dispose();
+        }
+
         private void contraReloj_Tick(object sender, EventArgs e)
         {
             segundos--;
@@ -242,8 +304,21 @@ namespace QuizAlmi
         private void comprobarGanador(int idRespuesta)
         {
             acertado = preguntas["data"][nivel]["respuestas"][idRespuesta]["correcta"].ToString() == "True" ? true : false;
+            foreach (var bt in botns)
+            {
+                bt.ForeColor = Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(72)))), ((int)(((byte)(58)))));
+            }
+
+            int correcta = -1;
+            for(int i = 0; i < 4; i++)
+            {
+                correcta = preguntas["data"][nivel]["respuestas"][i]["correcta"].ToString() == "True" ? i : correcta;
+            }
+
+            botns[correcta].ForeColor = Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(197)))), ((int)(((byte)(111)))));
+
             contraReloj.Stop();
-            siguienteEstado();
+            timerRespuesta.Start();
         }
     }
 }
