@@ -16,12 +16,13 @@ router.route('/partida/:idPregunta').get(partidaController.leerPartida)
 router.route('/preguntas').get(preguntaController.todasPreguntas);
 router.route('/juego/preguntas/:tema').get(preguntaController.listadoPreguntas)
 
-router.route('/pregunta/:idPregunta').get(preguntaController.leerPregunta)
+router.route('/pregunta/:idPregunta')
+    .get(preguntaController.leerPregunta)
+    .delete(preguntaController.eliminarPregunta)
 
 router.route('/preguntas/autor/:usuario').get(preguntaController.preguntasAutor);
 
 router.route('/pregunta')
-    .delete(preguntaController.eliminarPregunta)
     .post(preguntaController.anadirPregunta)
     .put(preguntaController.actualizarPregunta)
 

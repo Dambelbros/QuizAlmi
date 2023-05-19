@@ -8,7 +8,8 @@ var PreguntaSchema = mongoose.Schema({
     autor: { type: String, required: true },
     respuestas: { type: Array, required: true },
     foto: { type: String, required: true },
-    aclaracion: { type: String, required: true }
+    aclaracion: { type: String, required: true },
+    estado: { type: String, required: true }
 }, { collection: 'pelicans' });
 
 var Pregunta = module.exports = mongoose.model('pelicans', PreguntaSchema);
