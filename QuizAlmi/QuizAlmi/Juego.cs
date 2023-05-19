@@ -23,6 +23,7 @@ namespace QuizAlmi
         private static Random random = new Random();
         private List<Botn> botns = new List<Botn>();
         private String[,] resultados;
+        private Boolean respondido = false;
 
         public Juego(Newtonsoft.Json.Linq.JObject preguntas, Principal principal)
         {
@@ -42,6 +43,10 @@ namespace QuizAlmi
             botns.Add(botnResp2);
             botns.Add(botnResp3);
             botns.Add(botnResp4);
+
+            botnCo50.Visible = false;
+            botnCoSP.Visible = false;
+            botnCoTE.Visible = false;
 
             /*Configuracion Timer*/
             cambioImagen.Interval = 4000;
@@ -68,13 +73,15 @@ namespace QuizAlmi
             }
             else if (estado == 1)
             {
-                /*
-                Poner todos en blanco
-                */
+                botnCo50.Visible = true;
+                botnCoSP.Visible = true;
+                botnCoTE.Visible = true;
+
+                respondido = false;
                 foreach (var bt in botns)
                 {
                     bt.Enabled = true;
-                    bt.ForeColor = System.Drawing.Color.White;
+                    bt.ForeColor = Color.White;
                 }
 
                 segundos = 30;
@@ -184,22 +191,38 @@ namespace QuizAlmi
 
         private void btnResp1_Click(object sender, EventArgs e)
         {
-            comprobarGanador(0);
+            if (!respondido)
+            {
+                respondido = true;
+                comprobarGanador(0);
+            }
         }
 
         private void btnResp2_Click(object sender, EventArgs e)
         {
-            comprobarGanador(1);
+            if (!respondido)
+            {
+                respondido = true;
+                comprobarGanador(1);
+            }
         }
 
         private void btnResp3_Click(object sender, EventArgs e)
         {
-            comprobarGanador(2);
+            if (!respondido)
+            {
+                respondido = true;
+                comprobarGanador(2);
+            }
         }
 
         private void btnResp4_Click(object sender, EventArgs e)
         {
-            comprobarGanador(3);
+            if (!respondido)
+            {
+                respondido = true;
+                comprobarGanador(3);
+            }
         }
 
         private void btnSiguiente_Click(object sender, EventArgs e)
@@ -303,6 +326,10 @@ namespace QuizAlmi
 
         private void comprobarGanador(int idRespuesta)
         {
+            botnCo50.Visible = false;
+            botnCoSP.Visible = false;
+            botnCoTE.Visible = false;
+
             acertado = preguntas["data"][nivel]["respuestas"][idRespuesta]["correcta"].ToString() == "True" ? true : false;
             foreach (var bt in botns)
             {
