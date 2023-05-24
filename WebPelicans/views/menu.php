@@ -23,11 +23,14 @@
         }
         ?>
         <?php
-        if(isset($_SESSION['nombre_usuario']) && $_SESSION['rol']=="gerente") {
-        ?>
-        <li class="nav-item">
-          <a class="nav-link white" href="registro.php">Registro</a>
-        </li>
+          if(isset($_SESSION['nombre_usuario']) && $_SESSION['rol']=="gerente") {
+          ?>
+          <li class="nav-item">
+            <a class="nav-link white" href="registro.php">Registrar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link white" href="listadoTrabajadores.php">Trabajadores</a>
+          </li>
         <?php
         }
         ?>
@@ -40,8 +43,15 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <li><a class="dropdown-item" href="alta.php">Alta</a></li>
-            <li><a class="dropdown-item" href="listado.php">Listado</a></li>
-          </ul>
+            <li><a class="dropdown-item" href="listado.php">Mis preguntas</a></li>
+            <?php
+                if ($_SESSION['rol'] == "gerente") {
+                ?>
+                <li><a class="dropdown-item" href="todasPreguntas.php">Listado Todas</a></li>
+                <?php
+                }
+                ?>
+        </ul>
         </li>
         <?php
         }
@@ -56,17 +66,18 @@
           } else {
           ?>
           <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle white" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle white" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   <i class="bi bi-person-circle"></i><?php echo $_SESSION['nombre_usuario']; ?>
-                </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="editperfil.php">Perfil</a></li>
-                <li><a class="dropdown-item" href="php/close_session.php"><i class="bi bi-box-arrow-in-left"></i>Cerrar Sesión</a></li>
-            </ul>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="editperfil.php">Perfil</a></li>
+                  <li><a class="dropdown-item" href="php/close_session.php"><i class="bi bi-box-arrow-in-left"></i>Cerrar Sesión</a></li>
+              </ul>
           </li>
           <?php
           }
           ?>
+
       </ul>
     </div>
   </div>

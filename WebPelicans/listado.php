@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 $page = "listado";
 include_once "views/header.php";
 include_once "views/menu.php";

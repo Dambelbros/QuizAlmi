@@ -1,0 +1,25 @@
+#panelConfirmacionEliminar, #panelConfirmacionActualizar, #panelConfirmacionAnadir, #panelConfirmacionEnviado {
+    display: none;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    width: 50%;
+    z-index: 1;
+    padding: 15px;
+    background: #0c1b42;
+    border: white solid 3px;
+    border-radius: 5px;
+}
+
+#panelConfirmacionEliminar h4, #panelConfirmacionActualizar h4, #panelConfirmacionAnadir h4, #panelConfirmacionEnviado h4 {
+    color: white;
+    padding: 10px 0;
+}
+
+#btnCancelar,
+#btnEliminar {
+  border-radius: 5px;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: bold;
+}

@@ -9,11 +9,11 @@
                             <li class="in d-inline-block me-5"><a href="#"><i class="bi bi-instagram"></i></span></a></li>
                             <li class="fb d-inline-block me-5"><a href="#"><i class="bi bi-facebook"></i></span></a></li>
                             <li class="tw d-inline-block me-5"><a href="#"><i class="bi bi-twitter"></i></span></a></li>
-                            <li class="pin d-inline-block me-5"><a href="#"><i class="bi bi-github"></i></a></li>
+                            <li class="pin d-inline-block me-5"><a href="https://github.com/Dambelbros/QuizAlmi.git"><i class="bi bi-github"></i></a></li>
                         </ul>
                     </div>
                     <div class="copyright white">
-                        <p class="mb-0"><small>© Pelicans</small></p>
+                        <p class="mb-0"><small>Pelicans</small></p>
                     </div>
                 </div>
             </div>

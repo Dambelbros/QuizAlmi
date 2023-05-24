@@ -23,6 +23,11 @@ exports.anadirPartida = function(req, res){
             ok: "Ok",
             data: response
         })
+    }).catch(function(error){
+        res.json({
+            status: 'Error',
+            data: []
+        })
     })
 }
 
@@ -31,6 +36,11 @@ exports.todasPartidas = function(req, res){
         res.json({
             status: 'Ok',
             data: response
+        })
+    }).catch(function(error){
+        res.json({
+            status: 'Error',
+            data: []
         })
     })
 }
@@ -46,6 +56,37 @@ exports.leerPartida = function(req, res){
 
 exports.topJugadas = function(req, res){
     Partida.find().sort({ puntos: -1 }).limit(10).then(function(response){
+        res.json({
+            status: 'Ok',
+            data: response
+        })
+    }).catch(function(error){
+        res.json({
+            status: 'Error',
+            data: []
+        })
+    })
+}
+
+exports.preguntasPartida = function(req, res){
+    Partida.aggregate([
+        {
+          $match: {
+            _id: mongoose.Types.ObjectId(req.params.id)
+          }
+        },
+        {
+          $lookup: {
+            from: 'pelicans',
+            localField: 'preguntas._id',
+            foreignField: '_id',
+            as: 'preg'
+          }
+        },
+        {
+            $unset: [ "preg.tema", "preg.dificultad", "preg.autor", "preg.aclaracion", "preg.respuestas", "preg.foto", "preg.estado", "preg._id" ]
+        }
+    ]).then(function(response){
         res.json({
             status: 'Ok',
             data: response

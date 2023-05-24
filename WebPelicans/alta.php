@@ -1,4 +1,5 @@
 <?php
+$page = "alta";
 include_once "views/header.php";
 include_once "views/menu.php";
 include_once "views/alta.php";

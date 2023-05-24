@@ -1,8 +1,6 @@
 <?php
-    //var_dump($_POST);
+    var_dump($_POST);
     $url = 'http://192.168.0.120:8080/api/pregunta';
-
-    var_dump($_FILES);
 
     $nombreImg = $_FILES['foto']['name'];
     $ruta = $_FILES['foto']['tmp_name'];
@@ -19,7 +17,7 @@
     $fecha = getdate();
     $nombre = $fecha['yday'] . '_' . $fecha['mon'] . '_' . $fecha['year'] . '_' . $fecha['hours'] . '_' . $fecha['minutes'] .  '_' . $fecha['seconds'] . '_' . $randomString . '_' . $nombreImg;
 
-    $destino = "fotos/" . $nombre;
+    $destino = "../fotos/" . $nombre;
     if (move_uploaded_file($ruta, $destino)) {
         $data = array(
             'titulo' => $_POST["titulo"],
@@ -28,9 +26,10 @@
             'autor' => $_POST["autor"],
             'aclaracion' => $_POST["aclaracion"],
             'respuestas' => $_POST["respuesta"],
+            'estado' => $_POST["estado"],
             'foto' => '/fotos/' . $nombre
         );
-    
+
         $jsonData = json_encode($data);
     
         $curl = curl_init($url);
@@ -51,7 +50,16 @@
     
         curl_close($curl);
 
+        if (isset($_GET["preg"])) {
+            $url = 'http://192.168.0.120:8080/api/sugerencias/' . $_GET["preg"];
 
+            $curl = curl_init($url);
+            curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'DELETE');
+            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+            $response = curl_exec($curl);
+            curl_close($curl);
+        }
     }
     
     header('Location:listado.php');

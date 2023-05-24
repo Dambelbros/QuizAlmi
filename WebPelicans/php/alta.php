@@ -19,7 +19,7 @@ $fecha_fin_contrato = $_POST['fecha_fin_contrato'];
 
 $valid_register = register_usuario($rol, $dni, $usuario, $email, $nombre, $apellido, $fecha_nacimiento, $password, $salario_bruto, $fecha_inicio_contrato, $fecha_fin_contrato);
 
-if($valid_register) {
+if ($valid_register) {
     echo "1";
 } else {
     echo "0";

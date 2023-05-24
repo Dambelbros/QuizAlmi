@@ -1,5 +1,6 @@
 <?php
-    //include_once "../php/phpcheck_session.php";
+    include_once "php/check_session.php";
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -15,5 +16,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
     <!-- Bootstrap Font Icon CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <!--JqueryCDN-->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <!--DataTables-->
+    <link href="https://cdn.datatables.net/v/bs5/dt-1.13.4/datatables.min.css" rel="stylesheet"/>
+    <script src="https://cdn.datatables.net/v/bs5/dt-1.13.4/datatables.min.js"></script>
+    <!-- Estilos-->
     <link href="css/main.css" rel="stylesheet"></link>
+    <link rel="stylesheet" href="css/paneles.css">
+
 </head>

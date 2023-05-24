@@ -126,6 +126,7 @@ exports.anadirPregunta = function(req, res){
 }
 
 exports.actualizarPregunta = function(req, res){
+    console.log(req.body)
     Pregunta.findById(req.body.idPregunta).then(function(responseTemp){
         responseTemp.titulo = req.body.titulo ? req.body.titulo : responseTemp.titulo
         responseTemp.tema = req.body.tema ? req.body.tema : responseTemp.tema
@@ -134,7 +135,8 @@ exports.actualizarPregunta = function(req, res){
         responseTemp.dificultad = req.body.dificultad ? req.body.dificultad : responseTemp.dificultad
         responseTemp.estado = req.body.estado ? req.body.estado : responseTemp.estado
         
-        tempRespuestas = []
+        try {
+            tempRespuestas = []
 
         for (let index = 0; index < 4; index++) {
             if (index == 0) {
@@ -147,10 +149,12 @@ exports.actualizarPregunta = function(req, res){
                     frase: req.body.respuestas[index],
                     correcta: false
                 }
+                }
             }
-        }
 
-        responseTemp.respuestas = tempRespuestas;
+            responseTemp.respuestas = tempRespuestas;
+        } catch (error) {
+        }
 
         console.log(responseTemp)
         

@@ -36,7 +36,7 @@ if(isset($_POST['nombre_usuario']) && isset($_POST['password']) && isset($_POST[
             $_SESSION['id_usuario'] = $data_user['id_usuario'];
             $_SESSION['nombre'] = $data_user['nombre'];
             $_SESSION['nombre_usuario'] = $data_user['nombre_usuario'];
-            $_SESSION['puesto'] = $data_user['rol'];
+            $_SESSION['rol'] = $data_user['rol'];
         }
 
         echo "1";
@@ -46,5 +46,7 @@ if(isset($_POST['nombre_usuario']) && isset($_POST['password']) && isset($_POST[
     echo "0";
     exit;
 }
+
+
 
 ?>
