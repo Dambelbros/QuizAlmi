@@ -125,7 +125,6 @@ namespace QuizAlmi
                     lblResultado.Text = "Has Fallado";
                     pbResultado.BackgroundImage = Properties.Resources.fallo;
                 }
-                Console.WriteLine(puntos);
 
                 lblAclaracion.Text = preguntas["data"][nivel]["aclaracion"].ToString();
                 lblPuntos.Text = puntos.ToString() + " puntos";
@@ -276,8 +275,6 @@ namespace QuizAlmi
                 numeros[i] = numero;
                 seleccionados[numero] = true;
             }
-
-            Console.WriteLine(numeros);
 
             botns[numeros[0]].Enabled = false;
             botns[numeros[1]].Enabled = false;

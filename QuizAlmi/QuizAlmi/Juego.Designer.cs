@@ -53,12 +53,12 @@
             this.botnCoSP = new QuizAlmi.Botn();
             this.botnCo50 = new QuizAlmi.Botn();
             this.botnCoTE = new QuizAlmi.Botn();
-            this.botnVolver = new QuizAlmi.Botn();
-            this.botnSiguiente = new QuizAlmi.Botn();
             this.botnResp4 = new QuizAlmi.Botn();
             this.botnResp3 = new QuizAlmi.Botn();
             this.botnResp2 = new QuizAlmi.Botn();
             this.botnResp1 = new QuizAlmi.Botn();
+            this.botnVolver = new QuizAlmi.Botn();
+            this.botnSiguiente = new QuizAlmi.Botn();
             this.panel1.SuspendLayout();
             this.panelPregunta.SuspendLayout();
             this.panelAclaracion.SuspendLayout();
@@ -243,7 +243,7 @@
             this.dvgResultados.ShowCellToolTips = false;
             this.dvgResultados.ShowEditingIcon = false;
             this.dvgResultados.ShowRowErrors = false;
-            this.dvgResultados.Size = new System.Drawing.Size(740, 194);
+            this.dvgResultados.Size = new System.Drawing.Size(740, 433);
             this.dvgResultados.TabIndex = 2;
             // 
             // preg
@@ -285,10 +285,10 @@
             // 
             // pbImagen
             // 
-            this.pbImagen.Location = new System.Drawing.Point(155, 168);
+            this.pbImagen.Location = new System.Drawing.Point(150, 100);
             this.pbImagen.Name = "pbImagen";
-            this.pbImagen.Size = new System.Drawing.Size(344, 231);
-            this.pbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbImagen.Size = new System.Drawing.Size(623, 413);
+            this.pbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImagen.TabIndex = 1;
             this.pbImagen.TabStop = false;
             this.pbImagen.LoadCompleted += new System.ComponentModel.AsyncCompletedEventHandler(this.pbImagen_LoadCompleted);
@@ -357,46 +357,6 @@
             this.botnCoTE.TextColor = System.Drawing.Color.White;
             this.botnCoTE.UseVisualStyleBackColor = false;
             this.botnCoTE.Click += new System.EventHandler(this.botnCoTE_Click);
-            // 
-            // botnVolver
-            // 
-            this.botnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
-            this.botnVolver.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
-            this.botnVolver.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.botnVolver.BorderRadius = 10;
-            this.botnVolver.BorderSize = 0;
-            this.botnVolver.FlatAppearance.BorderSize = 0;
-            this.botnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botnVolver.Font = new System.Drawing.Font("Cascadia Mono", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botnVolver.ForeColor = System.Drawing.Color.White;
-            this.botnVolver.Location = new System.Drawing.Point(11, 13);
-            this.botnVolver.Name = "botnVolver";
-            this.botnVolver.Size = new System.Drawing.Size(89, 40);
-            this.botnVolver.TabIndex = 3;
-            this.botnVolver.Text = "Volver";
-            this.botnVolver.TextColor = System.Drawing.Color.White;
-            this.botnVolver.UseVisualStyleBackColor = false;
-            this.botnVolver.Click += new System.EventHandler(this.botnVolver_Click);
-            // 
-            // botnSiguiente
-            // 
-            this.botnSiguiente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
-            this.botnSiguiente.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
-            this.botnSiguiente.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.botnSiguiente.BorderRadius = 40;
-            this.botnSiguiente.BorderSize = 0;
-            this.botnSiguiente.FlatAppearance.BorderSize = 0;
-            this.botnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botnSiguiente.Font = new System.Drawing.Font("Cascadia Mono", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botnSiguiente.ForeColor = System.Drawing.Color.White;
-            this.botnSiguiente.Location = new System.Drawing.Point(478, 214);
-            this.botnSiguiente.Name = "botnSiguiente";
-            this.botnSiguiente.Size = new System.Drawing.Size(300, 300);
-            this.botnSiguiente.TabIndex = 3;
-            this.botnSiguiente.Text = ">";
-            this.botnSiguiente.TextColor = System.Drawing.Color.White;
-            this.botnSiguiente.UseVisualStyleBackColor = false;
-            this.botnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
             // 
             // botnResp4
             // 
@@ -474,6 +434,46 @@
             this.botnResp1.UseVisualStyleBackColor = false;
             this.botnResp1.Click += new System.EventHandler(this.btnResp1_Click);
             // 
+            // botnVolver
+            // 
+            this.botnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
+            this.botnVolver.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
+            this.botnVolver.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.botnVolver.BorderRadius = 10;
+            this.botnVolver.BorderSize = 0;
+            this.botnVolver.FlatAppearance.BorderSize = 0;
+            this.botnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botnVolver.Font = new System.Drawing.Font("Cascadia Mono", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botnVolver.ForeColor = System.Drawing.Color.White;
+            this.botnVolver.Location = new System.Drawing.Point(11, 13);
+            this.botnVolver.Name = "botnVolver";
+            this.botnVolver.Size = new System.Drawing.Size(89, 40);
+            this.botnVolver.TabIndex = 3;
+            this.botnVolver.Text = "Volver";
+            this.botnVolver.TextColor = System.Drawing.Color.White;
+            this.botnVolver.UseVisualStyleBackColor = false;
+            this.botnVolver.Click += new System.EventHandler(this.botnVolver_Click);
+            // 
+            // botnSiguiente
+            // 
+            this.botnSiguiente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
+            this.botnSiguiente.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
+            this.botnSiguiente.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.botnSiguiente.BorderRadius = 40;
+            this.botnSiguiente.BorderSize = 0;
+            this.botnSiguiente.FlatAppearance.BorderSize = 0;
+            this.botnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botnSiguiente.Font = new System.Drawing.Font("Cascadia Mono", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botnSiguiente.ForeColor = System.Drawing.Color.White;
+            this.botnSiguiente.Location = new System.Drawing.Point(478, 214);
+            this.botnSiguiente.Name = "botnSiguiente";
+            this.botnSiguiente.Size = new System.Drawing.Size(300, 300);
+            this.botnSiguiente.TabIndex = 3;
+            this.botnSiguiente.Text = ">";
+            this.botnSiguiente.TextColor = System.Drawing.Color.White;
+            this.botnSiguiente.UseVisualStyleBackColor = false;
+            this.botnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
+            // 
             // Juego
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -481,10 +481,10 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(16)))), ((int)(((byte)(22)))));
             this.ClientSize = new System.Drawing.Size(889, 741);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panelFinal);
-            this.Controls.Add(this.panelAclaracion);
             this.Controls.Add(this.pbImagen);
             this.Controls.Add(this.panelPregunta);
+            this.Controls.Add(this.panelFinal);
+            this.Controls.Add(this.panelAclaracion);
             this.Name = "Juego";
             this.Text = "Juego";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Juego_FormClosed);

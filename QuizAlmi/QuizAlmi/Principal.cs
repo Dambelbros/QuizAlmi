@@ -17,6 +17,9 @@ namespace QuizAlmi
         public String nombre;
         private Juego juegoVentana;
         private Newtonsoft.Json.Linq.JObject objeto;
+        private TopTen tt;
+        public Boolean ventanaTtAbierta = false;
+
         public Principal()
         {
             InitializeComponent();
@@ -72,6 +75,16 @@ namespace QuizAlmi
             panelIniciar.Visible = true;
             panelTemas.Visible = false;
             txtRedonNombre.textBox1.Text = "";
+        }
+
+        private void botnTopTen_Click(object sender, EventArgs e)
+        {
+            if (!ventanaTtAbierta)
+            {
+                ventanaTtAbierta = true;
+                tt = new TopTen(this);
+                tt.Show();
+            }
         }
     }
 }

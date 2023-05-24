@@ -31,10 +31,10 @@ namespace QuizAlmi
         private void InitializeComponent()
         {
             this.panelIniciar = new System.Windows.Forms.Panel();
+            this.panelTemas = new System.Windows.Forms.Panel();
+            this.botnTopTen = new QuizAlmi.Botn();
             this.txtRedonNombre = new QuizAlmi.TextRedon();
             this.botnJugar = new QuizAlmi.Botn();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.panelTemas = new System.Windows.Forms.Panel();
             this.botnTemaCultu = new QuizAlmi.Botn();
             this.botnTemaInfor = new QuizAlmi.Botn();
             this.panelIniciar.SuspendLayout();
@@ -43,13 +43,43 @@ namespace QuizAlmi
             // 
             // panelIniciar
             // 
+            this.panelIniciar.Controls.Add(this.botnTopTen);
             this.panelIniciar.Controls.Add(this.txtRedonNombre);
             this.panelIniciar.Controls.Add(this.botnJugar);
-            this.panelIniciar.Controls.Add(this.btnSalir);
             this.panelIniciar.Location = new System.Drawing.Point(12, 12);
             this.panelIniciar.Name = "panelIniciar";
             this.panelIniciar.Size = new System.Drawing.Size(870, 717);
             this.panelIniciar.TabIndex = 0;
+            // 
+            // panelTemas
+            // 
+            this.panelTemas.Controls.Add(this.botnTemaCultu);
+            this.panelTemas.Controls.Add(this.botnTemaInfor);
+            this.panelTemas.Location = new System.Drawing.Point(12, 12);
+            this.panelTemas.Name = "panelTemas";
+            this.panelTemas.Size = new System.Drawing.Size(870, 717);
+            this.panelTemas.TabIndex = 1;
+            this.panelTemas.Visible = false;
+            // 
+            // botnTopTen
+            // 
+            this.botnTopTen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
+            this.botnTopTen.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
+            this.botnTopTen.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.botnTopTen.BorderRadius = 10;
+            this.botnTopTen.BorderSize = 0;
+            this.botnTopTen.FlatAppearance.BorderSize = 0;
+            this.botnTopTen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botnTopTen.Font = new System.Drawing.Font("Cascadia Mono", 12F, System.Drawing.FontStyle.Bold);
+            this.botnTopTen.ForeColor = System.Drawing.Color.White;
+            this.botnTopTen.Location = new System.Drawing.Point(779, 682);
+            this.botnTopTen.Name = "botnTopTen";
+            this.botnTopTen.Size = new System.Drawing.Size(88, 32);
+            this.botnTopTen.TabIndex = 5;
+            this.botnTopTen.Text = "Top 10";
+            this.botnTopTen.TextColor = System.Drawing.Color.White;
+            this.botnTopTen.UseVisualStyleBackColor = false;
+            this.botnTopTen.Click += new System.EventHandler(this.botnTopTen_Click);
             // 
             // txtRedonNombre
             // 
@@ -90,25 +120,6 @@ namespace QuizAlmi
             this.botnJugar.TextColor = System.Drawing.Color.White;
             this.botnJugar.UseVisualStyleBackColor = false;
             this.botnJugar.Click += new System.EventHandler(this.btnJugar_Click);
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Location = new System.Drawing.Point(792, 3);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
-            this.btnSalir.TabIndex = 2;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            // 
-            // panelTemas
-            // 
-            this.panelTemas.Controls.Add(this.botnTemaCultu);
-            this.panelTemas.Controls.Add(this.botnTemaInfor);
-            this.panelTemas.Location = new System.Drawing.Point(12, 12);
-            this.panelTemas.Name = "panelTemas";
-            this.panelTemas.Size = new System.Drawing.Size(870, 717);
-            this.panelTemas.TabIndex = 1;
-            this.panelTemas.Visible = false;
             // 
             // botnTemaCultu
             // 
@@ -169,12 +180,12 @@ namespace QuizAlmi
         #endregion
 
         private System.Windows.Forms.Panel panelIniciar;
-        private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Panel panelTemas;
         private Botn botnJugar;
         private TextRedon txtRedonNombre;
         private Botn botnTemaInfor;
         private Botn botnTemaCultu;
+        private Botn botnTopTen;
     }
 }
 
