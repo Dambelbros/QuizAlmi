@@ -285,6 +285,9 @@ namespace QuizAlmi
         private void botnCoSP_Click(object sender, EventArgs e)
         {
             acertado = true;
+            botnCo50.Visible = false;
+            botnCoSP.Visible = false;
+            botnCoTE.Visible = false;
             contraReloj.Stop();
             botnCoSP.Enabled = false;
             siguienteEstado();

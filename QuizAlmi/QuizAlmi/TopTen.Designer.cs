@@ -37,6 +37,7 @@
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.puntos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dvgRecord)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,7 +97,7 @@
             this.dvgRecord.ShowCellToolTips = false;
             this.dvgRecord.ShowEditingIcon = false;
             this.dvgRecord.ShowRowErrors = false;
-            this.dvgRecord.Size = new System.Drawing.Size(500, 410);
+            this.dvgRecord.Size = new System.Drawing.Size(500, 300);
             this.dvgRecord.TabIndex = 3;
             this.dvgRecord.DoubleClick += new System.EventHandler(this.dvgRecord_DoubleClick);
             // 
@@ -130,14 +131,25 @@
             this.id.Name = "id";
             this.id.ReadOnly = true;
             this.id.Visible = false;
-            this.id.Width = 5;
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Cascadia Mono", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(17, 435);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(495, 61);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Haz doble click sobre una partida para ver los resultados";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TopTen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(16)))), ((int)(((byte)(22)))));
-            this.ClientSize = new System.Drawing.Size(524, 584);
+            this.ClientSize = new System.Drawing.Size(524, 497);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.dvgRecord);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -159,5 +171,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn puntos;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.Label label3;
     }
 }
