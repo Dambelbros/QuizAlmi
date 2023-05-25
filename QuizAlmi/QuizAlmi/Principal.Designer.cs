@@ -31,10 +31,10 @@ namespace QuizAlmi
         private void InitializeComponent()
         {
             this.panelIniciar = new System.Windows.Forms.Panel();
-            this.panelTemas = new System.Windows.Forms.Panel();
             this.botnTopTen = new QuizAlmi.Botn();
             this.txtRedonNombre = new QuizAlmi.TextRedon();
             this.botnJugar = new QuizAlmi.Botn();
+            this.panelTemas = new System.Windows.Forms.Panel();
             this.botnTemaCultu = new QuizAlmi.Botn();
             this.botnTemaInfor = new QuizAlmi.Botn();
             this.panelIniciar.SuspendLayout();
@@ -50,16 +50,6 @@ namespace QuizAlmi
             this.panelIniciar.Name = "panelIniciar";
             this.panelIniciar.Size = new System.Drawing.Size(870, 717);
             this.panelIniciar.TabIndex = 0;
-            // 
-            // panelTemas
-            // 
-            this.panelTemas.Controls.Add(this.botnTemaCultu);
-            this.panelTemas.Controls.Add(this.botnTemaInfor);
-            this.panelTemas.Location = new System.Drawing.Point(12, 12);
-            this.panelTemas.Name = "panelTemas";
-            this.panelTemas.Size = new System.Drawing.Size(870, 717);
-            this.panelTemas.TabIndex = 1;
-            this.panelTemas.Visible = false;
             // 
             // botnTopTen
             // 
@@ -121,6 +111,16 @@ namespace QuizAlmi
             this.botnJugar.UseVisualStyleBackColor = false;
             this.botnJugar.Click += new System.EventHandler(this.btnJugar_Click);
             // 
+            // panelTemas
+            // 
+            this.panelTemas.Controls.Add(this.botnTemaCultu);
+            this.panelTemas.Controls.Add(this.botnTemaInfor);
+            this.panelTemas.Location = new System.Drawing.Point(12, 12);
+            this.panelTemas.Name = "panelTemas";
+            this.panelTemas.Size = new System.Drawing.Size(870, 717);
+            this.panelTemas.TabIndex = 1;
+            this.panelTemas.Visible = false;
+            // 
             // botnTemaCultu
             // 
             this.botnTemaCultu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
@@ -169,6 +169,7 @@ namespace QuizAlmi
             this.ClientSize = new System.Drawing.Size(894, 741);
             this.Controls.Add(this.panelIniciar);
             this.Controls.Add(this.panelTemas);
+            this.MaximizeBox = false;
             this.Name = "Principal";
             this.Text = "Menu";
             this.panelIniciar.ResumeLayout(false);

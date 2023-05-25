@@ -105,6 +105,7 @@
             this.ClientSize = new System.Drawing.Size(800, 639);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.dvgResultados);
+            this.MaximizeBox = false;
             this.Name = "Resultados";
             this.Text = "Resultados";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Resultados_FormClosed);

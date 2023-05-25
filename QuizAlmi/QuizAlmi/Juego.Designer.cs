@@ -31,18 +31,27 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.botnCoSP = new QuizAlmi.Botn();
+            this.botnCo50 = new QuizAlmi.Botn();
+            this.botnCoTE = new QuizAlmi.Botn();
             this.lblNivel = new System.Windows.Forms.Label();
             this.lblPuntos = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblSegundos = new System.Windows.Forms.Label();
             this.panelPregunta = new System.Windows.Forms.Panel();
+            this.botnResp4 = new QuizAlmi.Botn();
+            this.botnResp3 = new QuizAlmi.Botn();
+            this.botnResp2 = new QuizAlmi.Botn();
+            this.botnResp1 = new QuizAlmi.Botn();
             this.lblPregunta = new System.Windows.Forms.Label();
             this.panelAclaracion = new System.Windows.Forms.Panel();
             this.pbResultado = new System.Windows.Forms.PictureBox();
+            this.botnSiguiente = new QuizAlmi.Botn();
             this.lblAclaracion = new System.Windows.Forms.Label();
             this.lblResultado = new System.Windows.Forms.Label();
             this.contraReloj = new System.Windows.Forms.Timer(this.components);
             this.panelFinal = new System.Windows.Forms.Panel();
+            this.botnVolver = new QuizAlmi.Botn();
             this.dvgResultados = new System.Windows.Forms.DataGridView();
             this.preg = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.res = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,15 +59,6 @@
             this.lblFinal = new System.Windows.Forms.Label();
             this.pbImagen = new System.Windows.Forms.PictureBox();
             this.timerRespuesta = new System.Windows.Forms.Timer(this.components);
-            this.botnCoSP = new QuizAlmi.Botn();
-            this.botnCo50 = new QuizAlmi.Botn();
-            this.botnCoTE = new QuizAlmi.Botn();
-            this.botnResp4 = new QuizAlmi.Botn();
-            this.botnResp3 = new QuizAlmi.Botn();
-            this.botnResp2 = new QuizAlmi.Botn();
-            this.botnResp1 = new QuizAlmi.Botn();
-            this.botnVolver = new QuizAlmi.Botn();
-            this.botnSiguiente = new QuizAlmi.Botn();
             this.panel1.SuspendLayout();
             this.panelPregunta.SuspendLayout();
             this.panelAclaracion.SuspendLayout();
@@ -80,6 +80,66 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(882, 45);
             this.panel1.TabIndex = 0;
+            // 
+            // botnCoSP
+            // 
+            this.botnCoSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
+            this.botnCoSP.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
+            this.botnCoSP.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.botnCoSP.BorderRadius = 10;
+            this.botnCoSP.BorderSize = 0;
+            this.botnCoSP.FlatAppearance.BorderSize = 0;
+            this.botnCoSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botnCoSP.Font = new System.Drawing.Font("Cascadia Mono", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botnCoSP.ForeColor = System.Drawing.Color.White;
+            this.botnCoSP.Location = new System.Drawing.Point(490, 8);
+            this.botnCoSP.Name = "botnCoSP";
+            this.botnCoSP.Size = new System.Drawing.Size(137, 28);
+            this.botnCoSP.TabIndex = 4;
+            this.botnCoSP.Text = "Saltar Pregunta";
+            this.botnCoSP.TextColor = System.Drawing.Color.White;
+            this.botnCoSP.UseVisualStyleBackColor = false;
+            this.botnCoSP.Click += new System.EventHandler(this.botnCoSP_Click);
+            // 
+            // botnCo50
+            // 
+            this.botnCo50.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
+            this.botnCo50.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
+            this.botnCo50.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.botnCo50.BorderRadius = 10;
+            this.botnCo50.BorderSize = 0;
+            this.botnCo50.FlatAppearance.BorderSize = 0;
+            this.botnCo50.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botnCo50.Font = new System.Drawing.Font("Cascadia Mono", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botnCo50.ForeColor = System.Drawing.Color.White;
+            this.botnCo50.Location = new System.Drawing.Point(419, 8);
+            this.botnCo50.Name = "botnCo50";
+            this.botnCo50.Size = new System.Drawing.Size(65, 28);
+            this.botnCo50.TabIndex = 4;
+            this.botnCo50.Text = "50%";
+            this.botnCo50.TextColor = System.Drawing.Color.White;
+            this.botnCo50.UseVisualStyleBackColor = false;
+            this.botnCo50.Click += new System.EventHandler(this.botnCo50_Click);
+            // 
+            // botnCoTE
+            // 
+            this.botnCoTE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
+            this.botnCoTE.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
+            this.botnCoTE.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.botnCoTE.BorderRadius = 10;
+            this.botnCoTE.BorderSize = 0;
+            this.botnCoTE.FlatAppearance.BorderSize = 0;
+            this.botnCoTE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botnCoTE.Font = new System.Drawing.Font("Cascadia Mono", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botnCoTE.ForeColor = System.Drawing.Color.White;
+            this.botnCoTE.Location = new System.Drawing.Point(263, 8);
+            this.botnCoTE.Name = "botnCoTE";
+            this.botnCoTE.Size = new System.Drawing.Size(150, 28);
+            this.botnCoTE.TabIndex = 4;
+            this.botnCoTE.Text = "Tiempo Extra";
+            this.botnCoTE.TextColor = System.Drawing.Color.White;
+            this.botnCoTE.UseVisualStyleBackColor = false;
+            this.botnCoTE.Click += new System.EventHandler(this.botnCoTE_Click);
             // 
             // lblNivel
             // 
@@ -141,6 +201,82 @@
             this.panelPregunta.TabIndex = 2;
             this.panelPregunta.Visible = false;
             // 
+            // botnResp4
+            // 
+            this.botnResp4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
+            this.botnResp4.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
+            this.botnResp4.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.botnResp4.BorderRadius = 40;
+            this.botnResp4.BorderSize = 0;
+            this.botnResp4.FlatAppearance.BorderSize = 0;
+            this.botnResp4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botnResp4.Font = new System.Drawing.Font("Cascadia Mono", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botnResp4.ForeColor = System.Drawing.Color.White;
+            this.botnResp4.Location = new System.Drawing.Point(487, 434);
+            this.botnResp4.Name = "botnResp4";
+            this.botnResp4.Size = new System.Drawing.Size(311, 189);
+            this.botnResp4.TabIndex = 10;
+            this.botnResp4.TextColor = System.Drawing.Color.White;
+            this.botnResp4.UseVisualStyleBackColor = false;
+            this.botnResp4.Click += new System.EventHandler(this.btnResp4_Click);
+            // 
+            // botnResp3
+            // 
+            this.botnResp3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
+            this.botnResp3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
+            this.botnResp3.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.botnResp3.BorderRadius = 40;
+            this.botnResp3.BorderSize = 0;
+            this.botnResp3.FlatAppearance.BorderSize = 0;
+            this.botnResp3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botnResp3.Font = new System.Drawing.Font("Cascadia Mono", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botnResp3.ForeColor = System.Drawing.Color.White;
+            this.botnResp3.Location = new System.Drawing.Point(58, 434);
+            this.botnResp3.Name = "botnResp3";
+            this.botnResp3.Size = new System.Drawing.Size(311, 189);
+            this.botnResp3.TabIndex = 9;
+            this.botnResp3.TextColor = System.Drawing.Color.White;
+            this.botnResp3.UseVisualStyleBackColor = false;
+            this.botnResp3.Click += new System.EventHandler(this.btnResp3_Click);
+            // 
+            // botnResp2
+            // 
+            this.botnResp2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
+            this.botnResp2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
+            this.botnResp2.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.botnResp2.BorderRadius = 40;
+            this.botnResp2.BorderSize = 0;
+            this.botnResp2.FlatAppearance.BorderSize = 0;
+            this.botnResp2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botnResp2.Font = new System.Drawing.Font("Cascadia Mono", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botnResp2.ForeColor = System.Drawing.Color.White;
+            this.botnResp2.Location = new System.Drawing.Point(487, 214);
+            this.botnResp2.Name = "botnResp2";
+            this.botnResp2.Size = new System.Drawing.Size(311, 189);
+            this.botnResp2.TabIndex = 8;
+            this.botnResp2.TextColor = System.Drawing.Color.White;
+            this.botnResp2.UseVisualStyleBackColor = false;
+            this.botnResp2.Click += new System.EventHandler(this.btnResp2_Click);
+            // 
+            // botnResp1
+            // 
+            this.botnResp1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
+            this.botnResp1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
+            this.botnResp1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.botnResp1.BorderRadius = 40;
+            this.botnResp1.BorderSize = 0;
+            this.botnResp1.FlatAppearance.BorderSize = 0;
+            this.botnResp1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botnResp1.Font = new System.Drawing.Font("Cascadia Mono", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botnResp1.ForeColor = System.Drawing.Color.White;
+            this.botnResp1.Location = new System.Drawing.Point(58, 214);
+            this.botnResp1.Name = "botnResp1";
+            this.botnResp1.Size = new System.Drawing.Size(311, 189);
+            this.botnResp1.TabIndex = 7;
+            this.botnResp1.TextColor = System.Drawing.Color.White;
+            this.botnResp1.UseVisualStyleBackColor = false;
+            this.botnResp1.Click += new System.EventHandler(this.btnResp1_Click);
+            // 
             // lblPregunta
             // 
             this.lblPregunta.Font = new System.Drawing.Font("Cascadia Mono", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -173,6 +309,26 @@
             this.pbResultado.Size = new System.Drawing.Size(70, 70);
             this.pbResultado.TabIndex = 0;
             this.pbResultado.TabStop = false;
+            // 
+            // botnSiguiente
+            // 
+            this.botnSiguiente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
+            this.botnSiguiente.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
+            this.botnSiguiente.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.botnSiguiente.BorderRadius = 40;
+            this.botnSiguiente.BorderSize = 0;
+            this.botnSiguiente.FlatAppearance.BorderSize = 0;
+            this.botnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botnSiguiente.Font = new System.Drawing.Font("Cascadia Mono", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botnSiguiente.ForeColor = System.Drawing.Color.White;
+            this.botnSiguiente.Location = new System.Drawing.Point(478, 214);
+            this.botnSiguiente.Name = "botnSiguiente";
+            this.botnSiguiente.Size = new System.Drawing.Size(300, 300);
+            this.botnSiguiente.TabIndex = 3;
+            this.botnSiguiente.Text = ">";
+            this.botnSiguiente.TextColor = System.Drawing.Color.White;
+            this.botnSiguiente.UseVisualStyleBackColor = false;
+            this.botnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
             // 
             // lblAclaracion
             // 
@@ -210,6 +366,26 @@
             this.panelFinal.Size = new System.Drawing.Size(870, 677);
             this.panelFinal.TabIndex = 3;
             this.panelFinal.Visible = false;
+            // 
+            // botnVolver
+            // 
+            this.botnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
+            this.botnVolver.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
+            this.botnVolver.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.botnVolver.BorderRadius = 10;
+            this.botnVolver.BorderSize = 0;
+            this.botnVolver.FlatAppearance.BorderSize = 0;
+            this.botnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botnVolver.Font = new System.Drawing.Font("Cascadia Mono", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botnVolver.ForeColor = System.Drawing.Color.White;
+            this.botnVolver.Location = new System.Drawing.Point(11, 13);
+            this.botnVolver.Name = "botnVolver";
+            this.botnVolver.Size = new System.Drawing.Size(89, 40);
+            this.botnVolver.TabIndex = 3;
+            this.botnVolver.Text = "Volver";
+            this.botnVolver.TextColor = System.Drawing.Color.White;
+            this.botnVolver.UseVisualStyleBackColor = false;
+            this.botnVolver.Click += new System.EventHandler(this.botnVolver_Click);
             // 
             // dvgResultados
             // 
@@ -298,182 +474,6 @@
             this.timerRespuesta.Interval = 3000;
             this.timerRespuesta.Tick += new System.EventHandler(this.timerRespuesta_Tick);
             // 
-            // botnCoSP
-            // 
-            this.botnCoSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
-            this.botnCoSP.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
-            this.botnCoSP.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.botnCoSP.BorderRadius = 10;
-            this.botnCoSP.BorderSize = 0;
-            this.botnCoSP.FlatAppearance.BorderSize = 0;
-            this.botnCoSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botnCoSP.Font = new System.Drawing.Font("Cascadia Mono", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botnCoSP.ForeColor = System.Drawing.Color.White;
-            this.botnCoSP.Location = new System.Drawing.Point(490, 8);
-            this.botnCoSP.Name = "botnCoSP";
-            this.botnCoSP.Size = new System.Drawing.Size(137, 28);
-            this.botnCoSP.TabIndex = 4;
-            this.botnCoSP.Text = "Saltar Pregunta";
-            this.botnCoSP.TextColor = System.Drawing.Color.White;
-            this.botnCoSP.UseVisualStyleBackColor = false;
-            this.botnCoSP.Click += new System.EventHandler(this.botnCoSP_Click);
-            // 
-            // botnCo50
-            // 
-            this.botnCo50.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
-            this.botnCo50.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
-            this.botnCo50.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.botnCo50.BorderRadius = 10;
-            this.botnCo50.BorderSize = 0;
-            this.botnCo50.FlatAppearance.BorderSize = 0;
-            this.botnCo50.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botnCo50.Font = new System.Drawing.Font("Cascadia Mono", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botnCo50.ForeColor = System.Drawing.Color.White;
-            this.botnCo50.Location = new System.Drawing.Point(419, 8);
-            this.botnCo50.Name = "botnCo50";
-            this.botnCo50.Size = new System.Drawing.Size(65, 28);
-            this.botnCo50.TabIndex = 4;
-            this.botnCo50.Text = "50%";
-            this.botnCo50.TextColor = System.Drawing.Color.White;
-            this.botnCo50.UseVisualStyleBackColor = false;
-            this.botnCo50.Click += new System.EventHandler(this.botnCo50_Click);
-            // 
-            // botnCoTE
-            // 
-            this.botnCoTE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
-            this.botnCoTE.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
-            this.botnCoTE.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.botnCoTE.BorderRadius = 10;
-            this.botnCoTE.BorderSize = 0;
-            this.botnCoTE.FlatAppearance.BorderSize = 0;
-            this.botnCoTE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botnCoTE.Font = new System.Drawing.Font("Cascadia Mono", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botnCoTE.ForeColor = System.Drawing.Color.White;
-            this.botnCoTE.Location = new System.Drawing.Point(263, 8);
-            this.botnCoTE.Name = "botnCoTE";
-            this.botnCoTE.Size = new System.Drawing.Size(150, 28);
-            this.botnCoTE.TabIndex = 4;
-            this.botnCoTE.Text = "Tiempo Extra";
-            this.botnCoTE.TextColor = System.Drawing.Color.White;
-            this.botnCoTE.UseVisualStyleBackColor = false;
-            this.botnCoTE.Click += new System.EventHandler(this.botnCoTE_Click);
-            // 
-            // botnResp4
-            // 
-            this.botnResp4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
-            this.botnResp4.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
-            this.botnResp4.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.botnResp4.BorderRadius = 40;
-            this.botnResp4.BorderSize = 0;
-            this.botnResp4.FlatAppearance.BorderSize = 0;
-            this.botnResp4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botnResp4.Font = new System.Drawing.Font("Cascadia Mono", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botnResp4.ForeColor = System.Drawing.Color.White;
-            this.botnResp4.Location = new System.Drawing.Point(487, 434);
-            this.botnResp4.Name = "botnResp4";
-            this.botnResp4.Size = new System.Drawing.Size(311, 189);
-            this.botnResp4.TabIndex = 10;
-            this.botnResp4.TextColor = System.Drawing.Color.White;
-            this.botnResp4.UseVisualStyleBackColor = false;
-            this.botnResp4.Click += new System.EventHandler(this.btnResp4_Click);
-            // 
-            // botnResp3
-            // 
-            this.botnResp3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
-            this.botnResp3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
-            this.botnResp3.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.botnResp3.BorderRadius = 40;
-            this.botnResp3.BorderSize = 0;
-            this.botnResp3.FlatAppearance.BorderSize = 0;
-            this.botnResp3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botnResp3.Font = new System.Drawing.Font("Cascadia Mono", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botnResp3.ForeColor = System.Drawing.Color.White;
-            this.botnResp3.Location = new System.Drawing.Point(58, 434);
-            this.botnResp3.Name = "botnResp3";
-            this.botnResp3.Size = new System.Drawing.Size(311, 189);
-            this.botnResp3.TabIndex = 9;
-            this.botnResp3.TextColor = System.Drawing.Color.White;
-            this.botnResp3.UseVisualStyleBackColor = false;
-            this.botnResp3.Click += new System.EventHandler(this.btnResp3_Click);
-            // 
-            // botnResp2
-            // 
-            this.botnResp2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
-            this.botnResp2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
-            this.botnResp2.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.botnResp2.BorderRadius = 40;
-            this.botnResp2.BorderSize = 0;
-            this.botnResp2.FlatAppearance.BorderSize = 0;
-            this.botnResp2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botnResp2.Font = new System.Drawing.Font("Cascadia Mono", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botnResp2.ForeColor = System.Drawing.Color.White;
-            this.botnResp2.Location = new System.Drawing.Point(487, 214);
-            this.botnResp2.Name = "botnResp2";
-            this.botnResp2.Size = new System.Drawing.Size(311, 189);
-            this.botnResp2.TabIndex = 8;
-            this.botnResp2.TextColor = System.Drawing.Color.White;
-            this.botnResp2.UseVisualStyleBackColor = false;
-            this.botnResp2.Click += new System.EventHandler(this.btnResp2_Click);
-            // 
-            // botnResp1
-            // 
-            this.botnResp1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
-            this.botnResp1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
-            this.botnResp1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.botnResp1.BorderRadius = 40;
-            this.botnResp1.BorderSize = 0;
-            this.botnResp1.FlatAppearance.BorderSize = 0;
-            this.botnResp1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botnResp1.Font = new System.Drawing.Font("Cascadia Mono", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botnResp1.ForeColor = System.Drawing.Color.White;
-            this.botnResp1.Location = new System.Drawing.Point(58, 214);
-            this.botnResp1.Name = "botnResp1";
-            this.botnResp1.Size = new System.Drawing.Size(311, 189);
-            this.botnResp1.TabIndex = 7;
-            this.botnResp1.TextColor = System.Drawing.Color.White;
-            this.botnResp1.UseVisualStyleBackColor = false;
-            this.botnResp1.Click += new System.EventHandler(this.btnResp1_Click);
-            // 
-            // botnVolver
-            // 
-            this.botnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
-            this.botnVolver.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
-            this.botnVolver.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.botnVolver.BorderRadius = 10;
-            this.botnVolver.BorderSize = 0;
-            this.botnVolver.FlatAppearance.BorderSize = 0;
-            this.botnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botnVolver.Font = new System.Drawing.Font("Cascadia Mono", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botnVolver.ForeColor = System.Drawing.Color.White;
-            this.botnVolver.Location = new System.Drawing.Point(11, 13);
-            this.botnVolver.Name = "botnVolver";
-            this.botnVolver.Size = new System.Drawing.Size(89, 40);
-            this.botnVolver.TabIndex = 3;
-            this.botnVolver.Text = "Volver";
-            this.botnVolver.TextColor = System.Drawing.Color.White;
-            this.botnVolver.UseVisualStyleBackColor = false;
-            this.botnVolver.Click += new System.EventHandler(this.botnVolver_Click);
-            // 
-            // botnSiguiente
-            // 
-            this.botnSiguiente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
-            this.botnSiguiente.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(36)))), ((int)(((byte)(54)))));
-            this.botnSiguiente.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.botnSiguiente.BorderRadius = 40;
-            this.botnSiguiente.BorderSize = 0;
-            this.botnSiguiente.FlatAppearance.BorderSize = 0;
-            this.botnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botnSiguiente.Font = new System.Drawing.Font("Cascadia Mono", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botnSiguiente.ForeColor = System.Drawing.Color.White;
-            this.botnSiguiente.Location = new System.Drawing.Point(478, 214);
-            this.botnSiguiente.Name = "botnSiguiente";
-            this.botnSiguiente.Size = new System.Drawing.Size(300, 300);
-            this.botnSiguiente.TabIndex = 3;
-            this.botnSiguiente.Text = ">";
-            this.botnSiguiente.TextColor = System.Drawing.Color.White;
-            this.botnSiguiente.UseVisualStyleBackColor = false;
-            this.botnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
-            // 
             // Juego
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -485,6 +485,7 @@
             this.Controls.Add(this.panelPregunta);
             this.Controls.Add(this.panelFinal);
             this.Controls.Add(this.panelAclaracion);
+            this.MaximizeBox = false;
             this.Name = "Juego";
             this.Text = "Juego";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Juego_FormClosed);
