@@ -165,12 +165,14 @@ namespace QuizAlmi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(16)))), ((int)(((byte)(22)))));
             this.ClientSize = new System.Drawing.Size(894, 741);
             this.Controls.Add(this.panelIniciar);
             this.Controls.Add(this.panelTemas);
             this.MaximizeBox = false;
             this.Name = "Principal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.panelIniciar.ResumeLayout(false);
             this.panelTemas.ResumeLayout(false);
