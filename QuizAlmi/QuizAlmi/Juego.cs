@@ -310,6 +310,9 @@ namespace QuizAlmi
             if (segundos == 0)
             {
                 acertado = false;
+                botnCo50.Visible = false;
+                botnCoSP.Visible = false;
+                botnCoTE.Visible = false;
                 siguienteEstado();
                 contraReloj.Stop();
             }
